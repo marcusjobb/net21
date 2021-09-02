@@ -6,12 +6,6 @@
         static int TheAnswer = 42;
         static void Main() // möbel
         {
-            // Snabb demo för Leon, ej relaterad till lektionen
-            //string raven = System.IO.File.ReadAllText(@"C:\Users\marcu\source\repos\Variabler live\Variabler live\Raven.txt");
-
-            //Console.WriteLine(raven);
-            //string stycken = raven.Split((char)13);
-
             //int kolumn = 50;
             //int rad = 10;
             //Console.ForegroundColor = ConsoleColor.Magenta;
