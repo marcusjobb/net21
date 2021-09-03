@@ -21,7 +21,7 @@
 
             int length = fname.Length + lname.Length;
 
-            Console.WriteLine(fname+" "+lname+" är "+length+" bokstäver långt");
+            Console.WriteLine(fname + " " + lname + " är " + length + " bokstäver långt");
         }
     }
 }

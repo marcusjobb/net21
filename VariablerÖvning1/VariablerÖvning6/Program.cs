@@ -19,8 +19,10 @@
     {
         static void Main(string[] args)
         {
-            double celcius = 17;
 
+            Console.WriteLine("Ange celsius");
+            var input = Console.ReadLine();
+            double celcius = double.Parse(input);
             double fahrenheit = celcius * 1.8 + 32;
             double kelvin = celcius + 273.15;
 
@@ -30,7 +32,7 @@
             Console.WriteLine("Kelvin     :" + Math.Round(kelvin, 2));
             Console.WriteLine();
 
-            fahrenheit = 52;
+            fahrenheit = double.Parse(input); 
             celcius = (fahrenheit - 32) / 1.8;
             kelvin = (fahrenheit + 459.67) / 1.8;
 
@@ -40,7 +42,7 @@
             Console.WriteLine("Kelvin     :" + Math.Round(kelvin, 2));
             Console.WriteLine();
 
-            kelvin = 300;
+            kelvin = double.Parse(input);
             celcius = kelvin - 273.15;
             fahrenheit = kelvin * 1.8 - 456.67;
             Console.WriteLine("C");

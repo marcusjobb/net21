@@ -19,7 +19,7 @@
             bool willRain = true;
             bool needUmbrella = rain || willRain;
 
-            Console.WriteLine("Behöver jag paraply? "+needUmbrella);
+            Console.WriteLine("Behöver jag paraply? " + needUmbrella);
         }
     }
 }
