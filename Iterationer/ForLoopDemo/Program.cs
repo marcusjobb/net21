@@ -4,7 +4,7 @@ namespace ForLoopDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             for (int counter = 10; counter > 0; counter--)
             {

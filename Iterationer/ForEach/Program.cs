@@ -5,7 +5,7 @@ namespace ForEach
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             List<string> name = new()
             {

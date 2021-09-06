@@ -5,9 +5,9 @@ namespace WhileDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            int value = 0;
+            //int value = 0;
             //while (value<110)
             //{
             //    Console.SetCursorPosition(value,10);

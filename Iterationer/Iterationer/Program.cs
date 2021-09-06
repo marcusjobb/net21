@@ -4,7 +4,7 @@ namespace Iterationer
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             int counter=0;
             while(counter < 10)

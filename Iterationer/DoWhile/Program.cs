@@ -4,7 +4,7 @@ namespace DoWhile
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string password = "abc123";
             string input = "abc123";
