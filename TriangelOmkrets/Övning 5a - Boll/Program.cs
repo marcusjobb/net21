@@ -6,6 +6,7 @@ namespace Övning_5a___Boll
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             // Bollens position
             int bollX = 10;
             int bollY = 10;
@@ -15,7 +16,7 @@ namespace Övning_5a___Boll
             int bollYH = 1;
 
             // Skärmgränser
-            int maxX = 119;
+            int maxX = 110;
             int maxY = 24;
             int minX = 1;
             int minY = 1;
@@ -45,11 +46,14 @@ namespace Övning_5a___Boll
                 }
 
                 Console.SetCursorPosition(bollX, bollY);
-                Console.WriteLine("O");
-                System.Threading.Thread.Sleep(100);
+                Console.WriteLine(".---.");
+                Console.SetCursorPosition(bollX, bollY+1);
+                Console.WriteLine("'---'");
+                System.Threading.Thread.Sleep(50);
                 Console.SetCursorPosition(bollX, bollY);
-                Console.WriteLine(" ");
-
+                Console.WriteLine("     ");
+                Console.SetCursorPosition(bollX, bollY+1);
+                Console.WriteLine("     ");
             }
 
 
