@@ -29,20 +29,24 @@ namespace Övning_5a___Boll
                 if (bollX>=maxX)
                 {
                     bollXH = -bollXH;
+                    continue;
                 }
                 if (bollY >= maxY)
                 {
                     bollYH = -bollYH;
+                    continue;
                 }
 
                 if (bollY < minY)
                 {
                     bollYH = -bollYH;
+                    continue;
                 }
 
                 if (bollX < minX)
                 {
                     bollXH = -bollXH;
+                    continue;
                 }
 
                 Console.SetCursorPosition(bollX, bollY);
