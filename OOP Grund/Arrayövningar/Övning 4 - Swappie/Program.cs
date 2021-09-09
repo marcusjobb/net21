@@ -2,10 +2,10 @@
 {
     using System;
 
-    class Program
+    internal class Program
     {
         // Marcus -> MrSacu <-- mitt nya gamernamn helt klart!
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Nästa fråga
             // Du kör sum += myArray[9]; så den kommer bara att summera värdet som är i position 9 i arrayen. varför ?

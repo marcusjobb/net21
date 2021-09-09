@@ -2,9 +2,9 @@
 {
     using System;
 
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Instansiera randomizer
             Random rnd = new Random();
@@ -16,7 +16,7 @@
                 nuffror[i] = rnd.Next(0, 100);
             }
             // skapa temporär array för 20 tal
-            int[] tmp= new int[20];
+            int[] tmp = new int[20];
             // kopiera nuffer arrayen till temp
             Array.Copy(nuffror, tmp, nuffror.Length);
             // kopiera tmp arrayen till nuffror

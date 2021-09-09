@@ -2,9 +2,9 @@
 {
     using System;
 
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // skapa en lista med 10 namn
             string[] residentEvil = new string[10]
@@ -35,7 +35,6 @@
             {
                 Console.WriteLine(hero);
             }
-
         }
     }
 }

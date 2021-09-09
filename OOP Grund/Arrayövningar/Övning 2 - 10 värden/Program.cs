@@ -2,9 +2,9 @@
 {
     using System;
 
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // definiera gränsvärden
             // const gör att talen inte går att ändra under programmets gång
@@ -20,14 +20,14 @@
             {
                 slump[genRand] = rnd.Next(0, MaxValue);
             }
-            
+
             // Summera talen
             int sum = 0;
             for (int i = 0; i < MaxNumbers; i++)
             {
                 sum += slump[i];
             }
-            
+
             // Sortera talen
             Array.Sort(slump);
             // Skriv ut talen

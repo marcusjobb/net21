@@ -2,9 +2,9 @@
 {
     using System;
 
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // defieniera gränsvärden
             // const gör att värderna inte går att ändra i under
@@ -66,7 +66,7 @@
                     }
                 }
                 // skriv ut ram-nederdel
-                Console.SetCursorPosition(0, MaxHeight+1);
+                Console.SetCursorPosition(0, MaxHeight + 1);
                 Console.WriteLine("+" + new string('-', MaxScreenWidth - 2) + "+");
             }
         }
