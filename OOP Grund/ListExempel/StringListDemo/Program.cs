@@ -18,7 +18,8 @@
                 "Lana Lang - Business Columnist and editor",
                 "Cat Grant - Gossip Columnist and editor",
                 "Ron Troupe - Political Columnist and editor",
-                "Steve Lombard - Sports Columnist and editor"
+                "Steve Lombard - Sports Columnist and editor",
+                "Iris West Allen - Editorial board member."
             };
 
 
