@@ -13,9 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 4 - Swappie", "Övn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 5 - Namnlista", "Övning 5 - Namnlista\Övning 5 - Namnlista.csproj", "{BEAF0481-2731-4695-8E67-D69EA3DA8802}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning 6 - För liten array", "Övning 6 - För liten array\Övning 6 - För liten array.csproj", "{7A24405C-42C9-439D-BE8A-4B0AFB7870C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 6 - För liten array", "Övning 6 - För liten array\Övning 6 - För liten array.csproj", "{7A24405C-42C9-439D-BE8A-4B0AFB7870C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning 7 - Spelkarta", "Övning 7 - Spelkarta\Övning 7 - Spelkarta.csproj", "{4CADD1B9-0806-484A-B737-0B82FA70EC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övning 7 - Spelkarta", "Övning 7 - Spelkarta\Övning 7 - Spelkarta.csproj", "{4CADD1B9-0806-484A-B737-0B82FA70EC08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning ADV 1 - Bubbelsort", "Övning ADV 1 - Bubbelsort\Övning ADV 1 - Bubbelsort.csproj", "{D2EBC1D7-F810-42AE-9219-E7E4EF6221AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning ADV 2 - Bubbelsort 2", "Övning ADV 2 - Bubbelsort 2\Övning ADV 2 - Bubbelsort 2.csproj", "{F43D3151-D720-4D12-A50C-07BF9D622AAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning ADV 3 - Luffarshack med korkad AI", "Övning ADV 3 - Luffarshack med korkad AI\Övning ADV 3 - Luffarshack med korkad AI.csproj", "{B7746F16-5CA9-4362-AFEA-966DC1013C18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{4CADD1B9-0806-484A-B737-0B82FA70EC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CADD1B9-0806-484A-B737-0B82FA70EC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CADD1B9-0806-484A-B737-0B82FA70EC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2EBC1D7-F810-42AE-9219-E7E4EF6221AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2EBC1D7-F810-42AE-9219-E7E4EF6221AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2EBC1D7-F810-42AE-9219-E7E4EF6221AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2EBC1D7-F810-42AE-9219-E7E4EF6221AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43D3151-D720-4D12-A50C-07BF9D622AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43D3151-D720-4D12-A50C-07BF9D622AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43D3151-D720-4D12-A50C-07BF9D622AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43D3151-D720-4D12-A50C-07BF9D622AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7746F16-5CA9-4362-AFEA-966DC1013C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7746F16-5CA9-4362-AFEA-966DC1013C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7746F16-5CA9-4362-AFEA-966DC1013C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7746F16-5CA9-4362-AFEA-966DC1013C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
