@@ -4,15 +4,47 @@
 
     class Program
     {
+        // Deklarera nödvändiga variabler
+        // Deklarar variablerna utanför metoden så att alla
+        // metoder i klassen kan använda dem
+        static string userName = "";
+        static string account = "";
+        static double cash = 0;
         static void Main()
         {
-            // Deklarera nödvändiga variabler
-            string userName = "";
-            string account = "";
-            double cash = 0;
 
             Title("Snedbank");
+            AskForPincode();
 
+            int menuChoice = 0;
+            while (menuChoice != 3)
+            {
+                Status(userName, account, cash);
+                menuChoice = MainMenu();
+
+                // Insättning
+                if (menuChoice == 1) { Deposit(); }
+                // Uttag
+                if (menuChoice == 2) { Widthdraw(); }
+            }
+        }
+
+        private static void Widthdraw()
+        {
+            Title("Uttag");
+            double withdraw = AskForCash("Hur mycket pengar vill du ta ut?", cash);
+            cash = ModifyAccount(cash, -withdraw);
+        }
+
+        private static void Deposit()
+        {
+            Title("Insättning");
+            double deposit = AskForCash("Hur mycket pengar vill du sätta in? ", 10000);
+            cash = ModifyAccount(cash, deposit);
+        }
+
+        private static void AskForPincode()
+        {
             do
             {
                 // Fråga om pinkod
@@ -30,61 +62,6 @@
                     Console.WriteLine("Fel pinkod!");
                 }
             } while (account == "");
-
-            Status(userName, account, cash);
-
-            int menuChoice = 0;
-            while (menuChoice < 1 || menuChoice > 3)
-            {
-                menuChoice = MainMenu();
-
-            }
-
-            // Insättning
-            if (menuChoice == 1)
-            {
-                Title("Insättning");
-
-                double deposit = AskForCash("Hur mycket pengar vill du sätta in? ", 10000);
-                cash = ModifyAccount(cash, deposit);
-                Status(userName, account, cash);
-
-                //string input = AskAQuestion("Hur mycket pengar vill du sätta in?");
-                //double.TryParse(input, out double deposit);
-                //if (deposit > 0)
-                //{
-                //    cash += deposit;
-                //    Console.WriteLine("Saldo: " + cash);
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Du angav ett negativt värde!");
-                //}
-            }
-            // Uttag
-            if (menuChoice == 2)
-            {
-                Title("Uttag");
-                double withdraw = AskForCash("Hur mycket pengar vill du ta ut?", cash);
-                cash = ModifyAccount(cash, -withdraw);
-                Status(userName, account, cash);
-
-                //string input = AskAQuestion("Hur mycket pengar vill du ta ut?");
-                //double.TryParse(input, out double withdraw);
-                //if (withdraw > cash)
-                //{
-                //    Console.WriteLine("Du har inte så mycket pengar!");
-                //}
-                //else if (withdraw < 0)
-                //{
-                //    Console.WriteLine("Du angav ett negativt värde!");
-                //}
-                //else
-                //{
-                //    cash -= withdraw;
-                //    Console.WriteLine("Saldo: " + cash);
-                //}
-            }
         }
 
         private static void Status(string userName, string account, double cash)
@@ -99,14 +76,18 @@
 
         private static int MainMenu()
         {
-            int menuChoice;
-            Title(" - Meny -");
+            int menuChoice = 0;
+            Title("Meny");
             Console.WriteLine(" 1) Insättning");
             Console.WriteLine(" 2) Uttag");
             Console.WriteLine(" 3) Logga ut");
 
-            int.TryParse(AskAQuestion("Ditt val:"), out menuChoice);
+            while (menuChoice < 1 || menuChoice > 3)
+            {
+                int.TryParse(AskAQuestion("Ditt val:"), out menuChoice);
+            }
             return menuChoice;
+
         }
 
         private static double ModifyAccount(double cash, double deposit)
@@ -125,7 +106,7 @@
         static void Title(string title)
         {
             Console.WriteLine("+------------------------------------+");
-            Console.WriteLine("| " + title.ToUpper());
+            Console.WriteLine("| " + title);
             Console.WriteLine("+------------------------------------+");
         }
         static double AskForCash(string question, double maxValue)
