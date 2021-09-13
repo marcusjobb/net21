@@ -119,8 +119,7 @@
         static string AskAQuestion(string question)
         {
             Console.Write(question);
-            string input = Console.ReadLine();
-            return input;
+            return Console.ReadLine();
         }
 
         static void Title(string title)
