@@ -40,8 +40,8 @@ namespace Cirkelrörelse
                 yMemory.Enqueue((int)y); // Add current position to list
                 angle += angleMovement; // Make the ball move
                 if (angle > maxAngle) angle = 0; // If the angle has move a whole circle start from 0 again
-                x = middleX + Math.Cos(angle) * ZoomX; // Enlarge the size of the circle
-                y = middleY + Math.Sin(angle) * ZoomY; // Enlarge the size of the circle
+                x = middleX + Math.Cos(angle) * ZoomX; // Use Cosine to make the ball stay in a circle and enlarge the size of the circle
+                y = middleY + Math.Sin(angle) * ZoomY; // Use Sine to make the ball stay in a circle and enlarge the size of the circle
                 if (x < 0) x = 0; // Make sure the ball is within the screens boundaries
                 if (x > maxX) x = maxX;
                 if (y < 0) y = 0;
