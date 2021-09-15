@@ -34,12 +34,12 @@ namespace FarmerAndTheGoatAndTheWolfAndTheLettuce
             //
             // Som exemplet nedan
             // --------------------------------------------------------------------------------------------------
-            MoveThingie(Thingies.Lettuce, Beach, Dinghy); // Flytta bonden från stranden till ekan
-            MoveThingie(Thingies.Farmer, Beach, Dinghy); // Flytta salladen från stranden till ekan
+            MoveThingie(Thingies.Lettuce, Beach, Dinghy); // Flytta salladen från stranden till ekan
+            MoveThingie(Thingies.Farmer, Beach, Dinghy); // Flytta bonden från stranden till ekan
 
             //Väl framme i ön
-            MoveThingie(Thingies.Lettuce, Dinghy, Island); // Flytta bonden från ekan till ön
-            MoveThingie(Thingies.Farmer, Dinghy, Island); // Flytta salladen från ekan till ön
+            MoveThingie(Thingies.Lettuce, Dinghy, Island); // Flytta salladen från ekan till ön
+            MoveThingie(Thingies.Farmer, Dinghy, Island); // Flytta bonden från ekan till ön
 
         }
 
