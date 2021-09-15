@@ -20,13 +20,13 @@ namespace Cirkelrörelse
             double angle = 0; // current angle
             double x = 0; // variable definition
             double y = 0;// variable definition
-            Queue<int> xMemory = new Queue<int>();
-            Queue<int> yMemory = new Queue<int>();
+            Queue<int> xMemory = new Queue<int>(); // Generate memory of X
+            Queue<int> yMemory = new Queue<int>(); // Generate memory of Y
             int trail = 12; // how many balls will be drawn before deleting
             for (int i = 0; i < trail; i++)
             {
-                xMemory.Enqueue(0);
-                yMemory.Enqueue(0);
+                xMemory.Enqueue(0); // Generate an empty queue where all positions are 0,0
+                yMemory.Enqueue(0); // Generate an empty queue where all positions are 0,0
             }
             // Window related
             int middleX = Console.WindowWidth / 2;  // positionen to make sure the circle is centered
@@ -34,24 +34,22 @@ namespace Cirkelrörelse
 
             while (true)
             {
-                Console.SetCursorPosition(xMemory.Dequeue(), yMemory.Dequeue());
-                Console.Write(" ");
-                xMemory.Enqueue((int)x);
-                yMemory.Enqueue((int)y);
-                angle += angleMovement;
-                if (angle > maxAngle) angle = 0;
-                x = middleX + Math.Cos(angle) * ZoomX;
-                y = middleY + Math.Sin(angle) * ZoomY;
-                if (x < 0) x = 0;
+                Console.SetCursorPosition(xMemory.Dequeue(), yMemory.Dequeue()); // Set cursor to memory position
+                Console.Write(" "); // Delete ball
+                xMemory.Enqueue((int)x); // Add current position to list
+                yMemory.Enqueue((int)y); // Add current position to list
+                angle += angleMovement; // Make the ball move
+                if (angle > maxAngle) angle = 0; // If the angle has move a whole circle start from 0 again
+                x = middleX + Math.Cos(angle) * ZoomX; // Use Cosine to make the ball stay in a circle and enlarge the size of the circle
+                y = middleY + Math.Sin(angle) * ZoomY; // Use Sine to make the ball stay in a circle and enlarge the size of the circle
+                if (x < 0) x = 0; // Make sure the ball is within the screens boundaries
                 if (x > maxX) x = maxX;
                 if (y < 0) y = 0;
                 if (y > maxY) x = maxY;
-                Console.SetCursorPosition((int)x, (int)y);
-                Console.WriteLine("O");
-                Thread.Sleep(50);
+                Console.SetCursorPosition((int)x, (int)y); // Place the cursor
+                Console.WriteLine("O"); // Draw a ball
+                Thread.Sleep(50); // Wait 
             }
-
-
         }
     }
 }
