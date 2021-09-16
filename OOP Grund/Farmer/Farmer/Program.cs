@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Copyright (c) 2011 rubicon IT GmbH
+using System;
 
 namespace FarmerAndTheGoatAndTheWolfAndTheLettuce
 {
@@ -70,7 +71,7 @@ namespace FarmerAndTheGoatAndTheWolfAndTheLettuce
                 Console.WriteLine("Ön skulle vara djumisshandel!");
                 Console.WriteLine("I övrigt skulle salladen gå sönder.");
             }
-            
+
             // Kolla om saken man vill flytta finns på platsen
             if (!from.Contains(thing))
             {
@@ -92,7 +93,7 @@ namespace FarmerAndTheGoatAndTheWolfAndTheLettuce
             to.Add(thing);
             Console.Write("Flyttade " + Translator[(int)thing] + " till ");
             GetLocationName(to);
-            
+
             // Kolla så att alla överlever förändringarna
             CheckStatus();
         }
