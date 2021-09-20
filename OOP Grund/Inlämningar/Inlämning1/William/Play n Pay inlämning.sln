@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Play n Pay inlämning", "Play n Pay inlämning\Play n Pay inlämning.csproj", "{65C3E01B-1ED5-40A5-93D2-8923151B9851}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65C3E01B-1ED5-40A5-93D2-8923151B9851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C3E01B-1ED5-40A5-93D2-8923151B9851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C3E01B-1ED5-40A5-93D2-8923151B9851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C3E01B-1ED5-40A5-93D2-8923151B9851}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DE67205-F411-44F1-A7BC-B49AE74A1EBE}
+	EndGlobalSection
+EndGlobal
