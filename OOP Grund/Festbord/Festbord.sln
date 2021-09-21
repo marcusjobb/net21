@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Festbord", "Festbord\Festbord.csproj", "{7EFC280C-5F41-4C84-B4A6-9E36BCCAA61E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EFC280C-5F41-4C84-B4A6-9E36BCCAA61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFC280C-5F41-4C84-B4A6-9E36BCCAA61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFC280C-5F41-4C84-B4A6-9E36BCCAA61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFC280C-5F41-4C84-B4A6-9E36BCCAA61E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B42AF9B8-C2EE-4DBB-8610-EEC1D7523D31}
+	EndGlobalSection
+EndGlobal
