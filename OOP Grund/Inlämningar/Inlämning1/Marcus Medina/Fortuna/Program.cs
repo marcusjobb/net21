@@ -6,12 +6,11 @@
     {
         private static void Main()
         {
-            int bank = 500;
-
             // Loop 1 - Spelet
             while (true)
             {
                 Console.Clear();
+                int bank = 500;
                 Console.WriteLine("Ditt saldo är " + bank + " pix");
                 int bet;
                 string input;
@@ -65,9 +64,18 @@
                 Console.WriteLine($"Tärning 2 {t2}");
                 Console.WriteLine($"Tärning 3 {t3}");
                 int multi = 0;
-                if (t1 == lucky && t2 == lucky && t3 == lucky) multi = 4;
-                else if ((t1 == lucky && t2 == lucky) || (t2 == lucky && t3 == lucky)) multi = 3;
-                else if (t1 == lucky || t2 == lucky || t3 == lucky) multi = 2;
+                if (t1 == lucky && t2 == lucky && t3 == lucky)
+                {
+                    multi = 4;
+                }
+                else if ((t1 == lucky && t2 == lucky) || (t2 == lucky && t3 == lucky))
+                {
+                    multi = 3;
+                }
+                else if (t1 == lucky || t2 == lucky || t3 == lucky)
+                {
+                    multi = 2;
+                }
 
                 if (multi > 0)
                 {
