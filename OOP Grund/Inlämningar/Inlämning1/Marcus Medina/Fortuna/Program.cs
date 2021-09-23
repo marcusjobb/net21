@@ -4,13 +4,8 @@
 
     internal static class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            if (args is null)
-            {
-                throw new ArgumentNullException(nameof(args));
-            }
-
             int bank = 500;
 
             // Loop 1 - Spelet
