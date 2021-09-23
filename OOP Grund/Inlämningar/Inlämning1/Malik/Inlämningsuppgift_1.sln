@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RollTheDice", "RollTheDice\RollTheDice.csproj", "{65E8EBCC-C5DA-44C9-B5F8-0F97D53B2E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inlämningsuppgift_1", "Inlämningsuppgift_1.csproj", "{0AE64D8D-4859-40C5-B883-2245C2CE5292}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65E8EBCC-C5DA-44C9-B5F8-0F97D53B2E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65E8EBCC-C5DA-44C9-B5F8-0F97D53B2E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65E8EBCC-C5DA-44C9-B5F8-0F97D53B2E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65E8EBCC-C5DA-44C9-B5F8-0F97D53B2E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE64D8D-4859-40C5-B883-2245C2CE5292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE64D8D-4859-40C5-B883-2245C2CE5292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE64D8D-4859-40C5-B883-2245C2CE5292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE64D8D-4859-40C5-B883-2245C2CE5292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D25F3C6F-FEBB-4D84-96D4-ADA3C1E95EEA}
+		SolutionGuid = {1A925514-332B-4B94-A9BD-2DB6BC29DE5B}
 	EndGlobalSection
 EndGlobal
