@@ -1,5 +1,6 @@
 ﻿namespace Livekod210924
 {
+    using Livekod210924.Extensions;
     using Livekod210924.Helpers;
     using System;
     using System.Collections.Generic;
@@ -26,19 +27,17 @@
             // Använd data
             SayHello("Hello World");
             Console.WriteLine(GetSum(number1, number2));
-            StringHelper.PrintArray(new string[] { "Hejsan", "Hoppsan" });
+            new string[] { "Hejsan", "Hoppsan" }.PrintArray();
             Console.WriteLine();
             PrintArrayExtra("----------", "Hello", "World", "From Net21", "----------");
-            StringHelper.PrintArray(new List<string> { "Hejsan", "Hoppsan", "Tralalalaaa" });
+            new List<string> { "Hejsan", "Hoppsan", "Tralalalaaa" }.PrintArray();
 
         }
 
         private void PrintArrayExtra(params string[] rows)
         {
-            StringHelper.PrintArray(rows);
+            rows.PrintArray();
         }
-
-
 
         /// <summary>
         /// Byter plats på nummer1 och nummer2.

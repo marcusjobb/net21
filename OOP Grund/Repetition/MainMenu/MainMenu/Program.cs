@@ -6,7 +6,7 @@ namespace MainMenu
     {
         private static void Main()
         {
-            var menu = new Menu();
+            Menu menu = new Menu();
             menu.AddOption("List movies");
             menu.AddOption("Play songs");
             menu.AddOption("Read Email");

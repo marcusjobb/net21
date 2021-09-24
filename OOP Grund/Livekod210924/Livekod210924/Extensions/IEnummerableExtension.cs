@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Livekod210924.Helpers
+namespace Livekod210924.Extensions
 {
-    static class StringHelper
+    static class IEnummerableExtension
     {
-        public static void PrintArray(IEnumerable<string> vs)
+        public static void PrintArray(this IEnumerable<string> vs)
         {
             foreach (var row in vs)
             {

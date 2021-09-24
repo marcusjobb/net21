@@ -1,0 +1,11 @@
+﻿
+CRUD (CRUDL)
+
+
+C - Create
+R - Read
+U - Update
+D - Delete
+L - List
+
+

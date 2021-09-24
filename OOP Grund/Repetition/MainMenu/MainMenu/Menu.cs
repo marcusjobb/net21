@@ -6,7 +6,7 @@
     public class Menu
     {
         // Menyalternativ
-        protected readonly List<string> MenuOptions = new();
+        protected List<string> MenuOptions = new();
         public string Title { get; set; }
         public string Cursor { get; set; } = ">";
 
