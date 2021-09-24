@@ -19,6 +19,7 @@ namespace MainMenu
             // Gör en klass som ärver från menyn och som skriver ut det på ett snyggare sätt
             // Ändra sedan i var menu raden till att new ska skapa en instans av din menyklass
             // istället för moderklassen Menu.
+            // Se exempel TeacherMenu.cs
             //
             // Förslag
             // Olika färg på texten och siffrorna
