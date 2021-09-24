@@ -51,13 +51,14 @@ namespace Livekod210924
             // Read
             Console.WriteLine(MyList[0]);
             Console.WriteLine();
+            
             // Update
             MyList[1] = "Robin";
 
             // Delete
             int index = MyList.IndexOf("Will Ferrell");
             if (index > 0) MyList.RemoveAt(index);
-            MyList.Remove("Adam sandler");
+            MyList.Remove("Adam Sandler");
 
             // List
             MyList.PrintArray();
