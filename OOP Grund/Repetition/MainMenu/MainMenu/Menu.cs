@@ -8,6 +8,7 @@
         // Menyalternativ
         protected readonly List<string> MenuOptions = new();
         public string Title { get; set; }
+        public string Cursor { get; set; } = ">";
 
         // Lägger till alternativ i menyn
         public virtual void AddOption(string optionTitle)
@@ -39,7 +40,7 @@
             {
                 do
                 {
-                    Console.Write("? ");
+                    Console.Write(Cursor);
                     input = Console.ReadLine();
                 } while (!int.TryParse(input, out choice));
             }
