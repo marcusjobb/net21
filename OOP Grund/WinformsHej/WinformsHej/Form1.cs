@@ -43,11 +43,39 @@ namespace WinformsHej
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string value = (string)listBox1.SelectedValue;
-            string display=(string)listBox1.Text;
+
             Person item = (Person)listBox1.SelectedItem;
             int index = listBox1.SelectedIndex;
+        }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(checkBox1.Checked.ToString());
+            textBox1.Enabled = checkBox1.Checked;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Person item = (Person)comboBox1.SelectedItem;
+            int index = comboBox1.SelectedIndex;
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            var selectedDate = monthCalendar1.SelectionRange.Start;
+
+            do
+            {
+                MessageBox.Show(selectedDate.ToString());
+
+                var current = selectedDate.AddDays(1); // nästa dag
+
+            } while (selectedDate <= monthCalendar1.SelectionRange.End);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hej på dig!");
         }
     }
 

@@ -41,7 +41,7 @@ namespace WinFormsProperties
             numericUpDown1.Minimum = 0;
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
         {
             MessageBox.Show(monthCalendar1.SelectionStart.ToString());
         }

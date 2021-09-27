@@ -106,11 +106,13 @@ namespace WinFormsProperties
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
             this.monthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.monthCalendar1.Location = new System.Drawing.Point(91, 59);
+            this.monthCalendar1.Location = new System.Drawing.Point(122, 51);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.ShowWeekNumbers = true;
             this.monthCalendar1.TabIndex = 12;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged_1);
             // 
             // tabPage2
             // 
@@ -140,7 +142,7 @@ namespace WinFormsProperties
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(9, 67);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1146, 23);
+            this.textBox3.Size = new System.Drawing.Size(711, 23);
             this.textBox3.TabIndex = 16;
             // 
             // textBox2
@@ -149,7 +151,7 @@ namespace WinFormsProperties
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(9, 38);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1146, 23);
+            this.textBox2.Size = new System.Drawing.Size(711, 23);
             this.textBox2.TabIndex = 15;
             // 
             // textBox1
@@ -158,7 +160,7 @@ namespace WinFormsProperties
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(9, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1146, 23);
+            this.textBox1.Size = new System.Drawing.Size(711, 23);
             this.textBox1.TabIndex = 14;
             // 
             // mainWindow
