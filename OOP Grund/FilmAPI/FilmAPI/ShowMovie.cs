@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FilmAPI
@@ -29,27 +23,35 @@ namespace FilmAPI
 
             WebClient wc = new WebClient();
             byte[] bytes = wc.DownloadData(movie.Poster);
-            Bitmap b = new Bitmap(new MemoryStream(bytes));
+            try
+            {
+                Bitmap b = new Bitmap(new MemoryStream(bytes));
 
-            pictureBox1.Image = b;
-            pictureBox1.Tag = movie.imdbID;
+                picMoviePoster.Image = b;
+                picMoviePoster.Tag = movie.imdbID;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunde inte ladda bilden\n" + ex.Message);
+            }
             this.Show();
         }
 
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        private void picMoviePoster_DoubleClick(object sender, EventArgs e)
         {
+            // Code snatched from https://stackoverflow.com/a/4580317
             Process myProcess = new Process();
 
             try
             {
                 // true is the default, but it is important not to set it to false
                 myProcess.StartInfo.UseShellExecute = true;
-                myProcess.StartInfo.FileName = $"https://www.imdb.com/title/{pictureBox1.Tag}/";
+                myProcess.StartInfo.FileName = $"https://www.imdb.com/title/{picMoviePoster.Tag}/";
                 myProcess.Start();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
     }

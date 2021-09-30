@@ -6,5 +6,4 @@
         public string totalResults { get; set; }
         public string Response { get; set; }
     }
-
 }

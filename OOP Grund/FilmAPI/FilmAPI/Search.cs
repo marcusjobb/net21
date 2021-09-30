@@ -8,5 +8,4 @@
         public string Type { get; set; }
         public string Poster { get; set; }
     }
-
 }

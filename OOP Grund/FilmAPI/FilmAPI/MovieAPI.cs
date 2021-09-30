@@ -1,14 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FilmAPI
 {
-
-    static class MovieAPI
+    internal static class MovieAPI
     {
         public static SearchResult SearchMovie(string url)
         {
@@ -40,11 +35,12 @@ namespace FilmAPI
 
             return movie;
         }
+
         public static Movie GetMovie(string url)
         {
             string json = string.Empty;
-            Movie movie=null;
-            
+            Movie movie = null;
+
             try
             {
                 using (var wc = new System.Net.WebClient())
@@ -54,7 +50,7 @@ namespace FilmAPI
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Något gick fel i nedladdningen av data\n"+ex.Message);
+                MessageBox.Show("Något gick fel i nedladdningen av data\n" + ex.Message);
                 return movie;
             }
 
@@ -85,7 +81,5 @@ namespace FilmAPI
         {
             return SearchMovie($"http://www.omdbapi.com/?apikey={Settings.Key}&page={page}&s={title}");
         }
-
     }
-
 }

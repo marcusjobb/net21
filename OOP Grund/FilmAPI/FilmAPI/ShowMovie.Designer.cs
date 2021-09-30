@@ -37,8 +37,8 @@ namespace FilmAPI
             this.label3 = new System.Windows.Forms.Label();
             this.textActors = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picMoviePoster = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoviePoster)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,21 +111,21 @@ namespace FilmAPI
             this.label4.TabIndex = 6;
             this.label4.Text = "Actors";
             // 
-            // pictureBox1
+            // picMoviePoster
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(392, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(335, 357);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+            this.picMoviePoster.Location = new System.Drawing.Point(392, 8);
+            this.picMoviePoster.Name = "picMoviePoster";
+            this.picMoviePoster.Size = new System.Drawing.Size(335, 357);
+            this.picMoviePoster.TabIndex = 8;
+            this.picMoviePoster.TabStop = false;
+            this.picMoviePoster.DoubleClick += new System.EventHandler(this.picMoviePoster_DoubleClick);
             // 
             // ShowMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 380);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picMoviePoster);
             this.Controls.Add(this.textActors);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textPlot);
@@ -136,7 +136,7 @@ namespace FilmAPI
             this.Controls.Add(this.label1);
             this.Name = "ShowMovie";
             this.Text = "ShowMovie";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoviePoster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +152,6 @@ namespace FilmAPI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textActors;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picMoviePoster;
     }
 }

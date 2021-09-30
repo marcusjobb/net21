@@ -20,5 +20,4 @@ namespace FilmAPI
             if (File.Exists(file)) Key = File.ReadAllText(file);
         }
     }
-
 }
