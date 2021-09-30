@@ -46,24 +46,30 @@ namespace FilmAPI
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(69, 9);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(326, 23);
+            this.txtSearch.Size = new System.Drawing.Size(195, 23);
             this.txtSearch.TabIndex = 1;
             // 
             // lstResults
             // 
+            this.lstResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstResults.FormattingEnabled = true;
             this.lstResults.ItemHeight = 15;
             this.lstResults.Location = new System.Drawing.Point(12, 38);
             this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(456, 394);
+            this.lstResults.Size = new System.Drawing.Size(325, 289);
             this.lstResults.TabIndex = 2;
             this.lstResults.DoubleClick += new System.EventHandler(this.lstResults_DoubleClick);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(401, 8);
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(270, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -76,13 +82,14 @@ namespace FilmAPI
             this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 450);
+            this.ClientSize = new System.Drawing.Size(357, 341);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
             this.Name = "frmSearch";
             this.Text = "frmSearch";
+            this.Load += new System.EventHandler(this.frmSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

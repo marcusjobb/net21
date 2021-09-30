@@ -19,7 +19,7 @@ namespace FilmAPI
             textTitle.Text = movie.Title;
             textYear.Text = movie.Year;
             textPlot.Text = movie.Plot;
-            textActors.Text = movie.Actors.Replace(",", "\r\n");
+            textActors.Text = movie.Actors.Replace(", ", "\r\n");
 
             WebClient wc = new WebClient();
             byte[] bytes = wc.DownloadData(movie.Poster);
@@ -54,5 +54,6 @@ namespace FilmAPI
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

@@ -23,6 +23,7 @@ namespace FilmAPI
             {
                 int page = 1;
                 int results = int.Parse(movies.totalResults);
+                if (results > 250) results = 250;
                 while (page * 10 < results)
                 {
                     this.Text = "Reading " + (page * 10) + " of " + results;
@@ -38,6 +39,7 @@ namespace FilmAPI
                     Thread.Sleep(10);
                 }
             }
+            this.Text = "Sök filmer";
         }
 
         private void lstResults_DoubleClick(object sender, EventArgs e)
@@ -47,6 +49,11 @@ namespace FilmAPI
 
             ShowMovie frm = new ShowMovie();
             frm.ShowThisData(movie);
+        }
+
+        private void frmSearch_Load(object sender, EventArgs e)
+        {
+            this.Text = "Sök filmer";
         }
     }
 }

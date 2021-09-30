@@ -55,7 +55,7 @@ namespace FilmAPI
             this.textTitle.Location = new System.Drawing.Point(47, 6);
             this.textTitle.Name = "textTitle";
             this.textTitle.ReadOnly = true;
-            this.textTitle.Size = new System.Drawing.Size(332, 23);
+            this.textTitle.Size = new System.Drawing.Size(237, 23);
             this.textTitle.TabIndex = 1;
             // 
             // textYear
@@ -63,7 +63,7 @@ namespace FilmAPI
             this.textYear.Location = new System.Drawing.Point(47, 35);
             this.textYear.Name = "textYear";
             this.textYear.ReadOnly = true;
-            this.textYear.Size = new System.Drawing.Size(332, 23);
+            this.textYear.Size = new System.Drawing.Size(71, 23);
             this.textYear.TabIndex = 3;
             // 
             // label2
@@ -81,7 +81,7 @@ namespace FilmAPI
             this.textPlot.Multiline = true;
             this.textPlot.Name = "textPlot";
             this.textPlot.ReadOnly = true;
-            this.textPlot.Size = new System.Drawing.Size(332, 138);
+            this.textPlot.Size = new System.Drawing.Size(237, 138);
             this.textPlot.TabIndex = 5;
             // 
             // label3
@@ -99,7 +99,7 @@ namespace FilmAPI
             this.textActors.Multiline = true;
             this.textActors.Name = "textActors";
             this.textActors.ReadOnly = true;
-            this.textActors.Size = new System.Drawing.Size(332, 152);
+            this.textActors.Size = new System.Drawing.Size(237, 152);
             this.textActors.TabIndex = 7;
             // 
             // label4
@@ -113,9 +113,14 @@ namespace FilmAPI
             // 
             // picMoviePoster
             // 
-            this.picMoviePoster.Location = new System.Drawing.Point(392, 8);
+            this.picMoviePoster.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMoviePoster.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picMoviePoster.Location = new System.Drawing.Point(290, 8);
             this.picMoviePoster.Name = "picMoviePoster";
-            this.picMoviePoster.Size = new System.Drawing.Size(335, 357);
+            this.picMoviePoster.Size = new System.Drawing.Size(559, 362);
+            this.picMoviePoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMoviePoster.TabIndex = 8;
             this.picMoviePoster.TabStop = false;
             this.picMoviePoster.DoubleClick += new System.EventHandler(this.picMoviePoster_DoubleClick);
@@ -124,7 +129,7 @@ namespace FilmAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 380);
+            this.ClientSize = new System.Drawing.Size(861, 382);
             this.Controls.Add(this.picMoviePoster);
             this.Controls.Add(this.textActors);
             this.Controls.Add(this.label4);
