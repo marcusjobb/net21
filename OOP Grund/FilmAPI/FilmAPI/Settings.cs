@@ -16,8 +16,8 @@ namespace FilmAPI
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             // Lägget till \APIKeys\OMDB.txt
             var file = Path.Combine(path, "APIKeys", "OMDB.txt");
-            // Läser filen
-            Key = File.ReadAllText(file);
+            // Kollar om filen finns, och läser den i så fal
+            if (File.Exists(file)) Key = File.ReadAllText(file);
         }
     }
 
