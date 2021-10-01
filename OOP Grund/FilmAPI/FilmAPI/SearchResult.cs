@@ -4,6 +4,7 @@
 // -----------------------------------------------------------------------------------------------
 
 #pragma warning disable IDE1006 // Naming Styles
+
 namespace FilmAPI
 {
     public class SearchResult
@@ -13,4 +14,5 @@ namespace FilmAPI
         public string Response { get; set; }
     }
 }
+
 #pragma warning restore IDE1006 // Naming Styles

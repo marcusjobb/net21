@@ -4,6 +4,7 @@
 // -----------------------------------------------------------------------------------------------
 
 #pragma warning disable IDE1006 // Naming Styles
+
 namespace FilmAPI
 {
     using System;
@@ -37,4 +38,5 @@ namespace FilmAPI
         public string Response { get; set; } = "";
     }
 }
+
 #pragma warning restore IDE1006 // Naming Styles

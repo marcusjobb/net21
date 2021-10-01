@@ -4,6 +4,7 @@
 // -----------------------------------------------------------------------------------------------
 
 #pragma warning disable IDE1006 // Naming Styles
+
 namespace FilmAPI
 {
     public class Search
@@ -15,4 +16,5 @@ namespace FilmAPI
         public string Poster { get; set; }
     }
 }
+
 #pragma warning restore IDE1006 // Naming Styles
