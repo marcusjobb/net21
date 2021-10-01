@@ -1,7 +1,7 @@
-﻿// ----------------------------------------------------------------------------------------------
-// This file "ListThingy.cs" is published under the GPLV3 license.
-// Created 01/10/2021 10:45:22 by DESKTOP-QU5QA1S\marcu
-// ----------------------------------------------------------------------------------------------
+﻿// -----------------------------------------------------------------------------------------------
+//  ListThingy.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
 
 namespace FilmAPI
 {
@@ -30,10 +30,7 @@ namespace FilmAPI
         /// The ToString.
         /// </summary>
         /// <returns>The <see cref="string"/>.</returns>
-        public override string ToString()
-        {
-            return Title;
-        }
+        public override string ToString() => Title;
 
         #endregion Public Methods
     }

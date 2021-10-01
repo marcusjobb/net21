@@ -1,8 +1,13 @@
-﻿using System;
-using System.IO;
+﻿// -----------------------------------------------------------------------------------------------
+//  Settings.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
 
 namespace FilmAPI
 {
+    using System;
+    using System.IO;
+
     public static class Settings
     {
         public static string Key { get; set; } = "xxxxxxxxx";

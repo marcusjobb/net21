@@ -31,8 +31,8 @@ namespace FilmAPI
         {
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lstResults = new System.Windows.Forms.ListBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.ListResults = new System.Windows.Forms.ListBox();
+            this.ButtonSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSearch
@@ -53,43 +53,43 @@ namespace FilmAPI
             this.txtSearch.Size = new System.Drawing.Size(195, 23);
             this.txtSearch.TabIndex = 1;
             // 
-            // lstResults
+            // ListResults
             // 
-            this.lstResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ListResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstResults.FormattingEnabled = true;
-            this.lstResults.ItemHeight = 15;
-            this.lstResults.Location = new System.Drawing.Point(12, 38);
-            this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(325, 289);
-            this.lstResults.TabIndex = 2;
-            this.lstResults.DoubleClick += new System.EventHandler(this.lstResults_DoubleClick);
+            this.ListResults.FormattingEnabled = true;
+            this.ListResults.ItemHeight = 15;
+            this.ListResults.Location = new System.Drawing.Point(12, 38);
+            this.ListResults.Name = "ListResults";
+            this.ListResults.Size = new System.Drawing.Size(325, 289);
+            this.ListResults.TabIndex = 2;
+            this.ListResults.DoubleClick += new System.EventHandler(this.ListResults_DoubleClick);
             // 
-            // btnSearch
+            // ButtonSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(270, 8);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "&Sök";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.ButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonSearch.Location = new System.Drawing.Point(270, 8);
+            this.ButtonSearch.Name = "ButtonSearch";
+            this.ButtonSearch.Size = new System.Drawing.Size(75, 23);
+            this.ButtonSearch.TabIndex = 3;
+            this.ButtonSearch.Text = "&Sök";
+            this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
-            // frmSearch
+            // FormSearch
             // 
-            this.AcceptButton = this.btnSearch;
+            this.AcceptButton = this.ButtonSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 341);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lstResults);
+            this.Controls.Add(this.ButtonSearch);
+            this.Controls.Add(this.ListResults);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
-            this.Name = "frmSearch";
-            this.Text = "frmSearch";
-            this.Load += new System.EventHandler(this.frmSearch_Load);
+            this.Name = "FormSearch";
+            this.Text = "FormSearch";
+            this.Load += new System.EventHandler(this.FormSearch_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,8 +99,8 @@ namespace FilmAPI
 
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.ListBox lstResults;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ListBox ListResults;
+        private System.Windows.Forms.Button ButtonSearch;
     }
 }
 

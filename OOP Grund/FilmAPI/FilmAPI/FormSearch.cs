@@ -1,7 +1,7 @@
-﻿// ----------------------------------------------------------------------------------------------
-// This file "frmSearch.cs" is published under the GPLV3 license.
-// Created 01/10/2021 10:33:57 by DESKTOP-QU5QA1S\marcu
-// ----------------------------------------------------------------------------------------------
+﻿// -----------------------------------------------------------------------------------------------
+//  FormSearch.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
 
 namespace FilmAPI
 {
@@ -30,7 +30,7 @@ namespace FilmAPI
         /// <returns>The <see cref="int"/>.</returns>
         private static int GetMaxHits(SearchResult movies)
         {
-            int results = int.Parse(movies.totalResults);
+            var results = int.Parse(movies.totalResults);
             if (results > 250)
             {
                 results = 250;
@@ -44,15 +44,15 @@ namespace FilmAPI
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            SearchResult movies = MovieAPI.SearchByTitle(txtSearch.Text);
+            var movies = MovieAPI.SearchByTitle(txtSearch.Text);
 
-            lstResults.Items.Clear();
+            ListResults.Items.Clear();
             if (movies != null && movies.Response != "false")
             {
-                int page = 1;
-                int results = GetMaxHits(movies);
+                var page = 1;
+                var results = GetMaxHits(movies);
 
                 while (page * 10 < results)
                 {
@@ -71,14 +71,14 @@ namespace FilmAPI
         private void FillListbox(ref SearchResult movies, ref int page, int results)
         {
             Text = "Reading " + (page * 10) + " of " + results;
-            foreach (Search movie in movies.Search)
+            foreach (var movie in movies.Search)
             {
                 ListThingy movieData = new()
                 {
-                    Title = movie.Type + " : " + movie.Title + " (" + movie.Year + ")" + "\t" + movie.imdbID,
+                    Title = $"{movie.Type} : {movie.Title} ({movie.Year})\t{movie.imdbID}",
                     IMDB = movie.imdbID
                 };
-                lstResults.Items.Add(movieData);
+                ListResults.Items.Add(movieData);
             }
             page++;
             movies = MovieAPI.SearchByTitle(txtSearch.Text, page);
@@ -86,26 +86,23 @@ namespace FilmAPI
         }
 
         /// <summary>
-        /// The frmSearch_Load.
+        /// The FormSearch_Load.
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private void frmSearch_Load(object sender, EventArgs e)
-        {
-            Text = "Sök filmer";
-        }
+        private void FormSearch_Load(object sender, EventArgs e) => Text = "Sök filmer";
 
         /// <summary>
-        /// The lstResults_DoubleClick.
+        /// The ListResults_DoubleClick.
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private void lstResults_DoubleClick(object sender, EventArgs e)
+        private void ListResults_DoubleClick(object sender, EventArgs e)
         {
-            ListThingy movieID = (ListThingy)lstResults.SelectedItem;
-            Movie movie = MovieAPI.GetByIMDBCode(movieID.IMDB);
+            var movieID = (ListThingy)ListResults.SelectedItem;
+            var movie = MovieAPI.GetByIMDBCode(movieID.IMDB);
 
-            ShowMovie frm = new ShowMovie();
+            var frm = new ShowMovie();
             frm.ShowThisData(movie);
         }
     }
