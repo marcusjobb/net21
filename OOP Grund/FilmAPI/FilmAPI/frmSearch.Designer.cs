@@ -1,7 +1,7 @@
 ﻿
 namespace FilmAPI
 {
-    partial class frmSearch
+    partial class FormSearch
     {
         /// <summary>
         ///  Required designer variable.

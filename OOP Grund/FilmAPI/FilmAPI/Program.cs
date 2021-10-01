@@ -14,7 +14,7 @@ namespace FilmAPI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSearch());
+            Application.Run(new FormSearch());
         }
     }
 }

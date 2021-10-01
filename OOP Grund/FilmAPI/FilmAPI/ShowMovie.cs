@@ -40,7 +40,7 @@ namespace FilmAPI
         private void picMoviePoster_DoubleClick(object sender, EventArgs e)
         {
             // Code snatched from https://stackoverflow.com/a/4580317
-            Process myProcess = new Process();
+            Process myProcess = new();
 
             try
             {
@@ -54,6 +54,5 @@ namespace FilmAPI
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }
