@@ -1,9 +1,14 @@
-﻿namespace Livekod210924
+﻿// -----------------------------------------------------------------------------------------------
+//  MetoderRepetition.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Livekod210924
 {
-    using Livekod210924.Extensions;
-    using Livekod210924.Helpers;
     using System;
     using System.Collections.Generic;
+
+    using Livekod210924.Extensions;
 
     public class MetoderRepetition
     {

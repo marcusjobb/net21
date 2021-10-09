@@ -1,12 +1,10 @@
 ﻿// -----------------------------------------------------------------------------------------------
-//   by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  OfficeSupply.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
 //  Published under GNU General Public License v3 (GPL-3)
 // -----------------------------------------------------------------------------------------------
 
 namespace LiveKodningRepetition
 {
-    using System;
-
     internal class Supply
     {
         public string Name { get; set; }

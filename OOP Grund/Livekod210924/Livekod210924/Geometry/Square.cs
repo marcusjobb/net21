@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// -----------------------------------------------------------------------------------------------
+//  Square.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Livekod210924.Geometry
 {
@@ -19,7 +20,7 @@ namespace Livekod210924.Geometry
         {
             get
             {
-                return Math.Pow(Side,2);
+                return Math.Pow(Side, 2);
             }
 
         }
@@ -27,7 +28,7 @@ namespace Livekod210924.Geometry
         {
             get
             {
-                return Side*4;
+                return Side * 4;
             }
         }
     }

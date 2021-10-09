@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// -----------------------------------------------------------------------------------------------
+//  AskFor.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Livekod210924.Helpers
 {
     static class AskFor
     {
         /// <summary>
-        /// Asks for an integer
+        /// Fråga om ett tal
         /// </summary>
-        /// <param name="message">Message to be written to the user</param>
-        /// <returns></returns>
+        /// <param name="message">Meddelande</param>
+        /// <returns>Returnerar det nummer som användaren gav</returns>
         public static int Integer(string message)
         {
             bool isNummeric;
@@ -20,13 +21,18 @@ namespace Livekod210924.Helpers
             string input;
             do
             {
-                Console.Write(message+": ");
+                Console.Write(message + ": ");
                 input = Console.ReadLine();
                 isNummeric = int.TryParse(input, out value);
             } while (!isNummeric);
             return value;
         }
 
+        /// <summary>
+        /// Fråga om ett tal
+        /// </summary>
+        /// <param name="message">Meddelande</param>
+        /// <returns>Returnerar det nummer som användaren gav</returns>
         internal static double Double(string message)
         {
             bool isNummeric;

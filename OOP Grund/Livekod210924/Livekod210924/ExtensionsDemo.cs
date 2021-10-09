@@ -1,5 +1,11 @@
-﻿using Livekod210924.Extensions;
+﻿// -----------------------------------------------------------------------------------------------
+//  ExtensionsDemo.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
 using System;
+
+using Livekod210924.Extensions;
 
 namespace Livekod210924
 {

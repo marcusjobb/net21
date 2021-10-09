@@ -1,4 +1,8 @@
-﻿
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
 namespace QueueDemo
 {
     using System;
@@ -19,7 +23,7 @@ namespace QueueDemo
             }
 
             Console.WriteLine();
-            Console.WriteLine("Count:     "+q.Count);
+            Console.WriteLine("Count:     " + q.Count);
             Console.WriteLine("Peek:     " + q.Peek());
             Console.WriteLine("Dequeue : " + q.Dequeue());
             Console.WriteLine("Peek:     " + q.Peek());

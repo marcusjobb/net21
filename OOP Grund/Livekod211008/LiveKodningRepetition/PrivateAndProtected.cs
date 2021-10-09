@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------
-//   by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  PrivateAndProtected.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
 //  Published under GNU General Public License v3 (GPL-3)
 // -----------------------------------------------------------------------------------------------
 
@@ -19,12 +19,12 @@ namespace LiveKodningRepetition
             {
                 if (value < 0) return;
                 IsDead = value > 120;
-                age = value; 
+                age = value;
             }
         }
     }
 
-    internal class Male:Human
+    internal class Male : Human
     {
         public Male()
         {

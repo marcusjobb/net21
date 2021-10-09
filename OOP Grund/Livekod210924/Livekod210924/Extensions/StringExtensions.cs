@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// -----------------------------------------------------------------------------------------------
+//  StringExtensions.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
 
 namespace Livekod210924.Extensions
 {
@@ -13,12 +12,22 @@ namespace Livekod210924.Extensions
 
     static class StringExtensions
     {
+        /// <summary>
+        /// Omvandlar tal från sträng till integer
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>0 om fel, annars nummerisk värde</returns>
         public static int ToInt(this string input)
         {
             int number;
             int.TryParse(input, out number);
             return number;
         }
+        /// <summary>
+        /// Omvandlar tal från sträng till double
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>0 om fel, annars nummerisk värde</returns>
         public static double ToDouble(this string input)
         {
             double number;
