@@ -1,15 +1,9 @@
 ﻿// -----------------------------------------------------------------------------------------------
-//  DemoCode.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  WeirdForLoops.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
 //  Published under GNU General Public License v3 (GPL-3)
-//  LiveKodningRepetition created 10/8/2021 9:09:00 AM
 // -----------------------------------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
 
 namespace LiveKodningRepetition
 {
@@ -37,7 +31,7 @@ namespace LiveKodningRepetition
             //{
             //    Console.Write($"{y} ");
             //}
-            
+
             bool check = true;
             int counter = 0;
             for (; check;)

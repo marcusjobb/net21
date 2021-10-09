@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------
-//   by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  BaseTest.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
 //  Published under GNU General Public License v3 (GPL-3)
 // -----------------------------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ namespace LiveKodningRepetition
         public override string ToString() => "A ";
     }
 
-    class B :A
+    class B : A
     {
         public B()
         {
@@ -38,7 +38,10 @@ namespace LiveKodningRepetition
     {
         internal void Start()
         {
+            // Instansierar A, sedan B och slutligen C.
+            // Då C ärver B och B ärver A
             var test = new C();
+            // Skriver ut C B A då base anropas
             Console.WriteLine(test);
         }
     }

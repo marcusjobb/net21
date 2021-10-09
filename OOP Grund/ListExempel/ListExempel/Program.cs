@@ -1,4 +1,9 @@
-﻿namespace ListExempel // Hus
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace ListExempel // Hus
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +12,7 @@
     {
         static void Main() // Möbler
         {
-            int[] extras= new int[] { 32, 98, 76, 53 };
+            int[] extras = new int[] { 32, 98, 76, 53 };
 
             List<int> nuffror = new List<int>(extras)
             {

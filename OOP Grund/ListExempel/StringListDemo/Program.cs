@@ -1,7 +1,11 @@
-﻿namespace StringListDemo
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace StringListDemo
 {
     using System;
-    using System.Collections;
     using System.Collections.Specialized;
 
     class Program

@@ -1,9 +1,12 @@
-﻿using Livekod210924.Extensions;
-using Livekod210924.Geometry;
-using Livekod210924.Helpers;
-using Livekod210924.POCOs;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
+
+using Livekod210924.Extensions;
 
 namespace Livekod210924
 {
@@ -51,7 +54,7 @@ namespace Livekod210924
             // Read
             Console.WriteLine(MyList[0]);
             Console.WriteLine();
-            
+
             // Update
             MyList[1] = "Robin";
 
