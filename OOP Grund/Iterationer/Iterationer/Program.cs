@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Iterationer
 {
@@ -6,8 +11,8 @@ namespace Iterationer
     {
         static void Main()
         {
-            int counter=0;
-            while(counter < 10)
+            int counter = 0;
+            while (counter < 10)
             {
                 counter++; // Öka räknare med 1
 
@@ -16,7 +21,7 @@ namespace Iterationer
                 //    break;
                 //}
 
-                if (counter==4)
+                if (counter == 4)
                 {
                     continue;
                 }

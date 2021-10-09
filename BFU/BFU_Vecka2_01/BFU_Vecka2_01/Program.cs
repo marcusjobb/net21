@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace BFU_Vecka2_01
 {
@@ -63,7 +68,6 @@ namespace BFU_Vecka2_01
             {
                 ticket *= 0.85; // Dra av 15%
             }
-
 
             // Presentera resultatet
             // När programmet körs skall ” Din biljett kostar 120kr” skrivas ut.

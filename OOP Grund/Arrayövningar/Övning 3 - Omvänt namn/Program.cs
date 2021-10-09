@@ -1,4 +1,9 @@
-﻿namespace Övning_3___Omvänt_namn
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Övning_3___Omvänt_namn
 {
     using System;
 

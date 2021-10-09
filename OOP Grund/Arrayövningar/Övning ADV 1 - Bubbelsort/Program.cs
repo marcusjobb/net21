@@ -1,4 +1,9 @@
-﻿namespace Övning_ADV_1___Bubbelsort
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Övning_ADV_1___Bubbelsort
 {
     using System;
 
@@ -37,12 +42,12 @@
                 // -------------------------------------------------------------------
                 // loopa igenom alla värden
                 // -------------------------------------------------------------------
-                for (int pos = 0; pos < numbers.Length-1; pos++)
+                for (int pos = 0; pos < numbers.Length - 1; pos++)
                 {
                     // -------------------------------------------------------------------
                     // om värdet är större än nästa värde
                     // -------------------------------------------------------------------
-                    if (numbers[pos]>numbers[pos+1])
+                    if (numbers[pos] > numbers[pos + 1])
                     {
                         // -------------------------------------------------------------------
                         // swap

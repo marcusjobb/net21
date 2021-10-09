@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Initianls
 {
@@ -16,10 +21,10 @@ namespace Initianls
             // Tom Marvolo Riddle
 
             int space = 0;
-            while (space>=0)
+            while (space >= 0)
             {
-                space = name.IndexOf(' ',space);
-                if (space>0)
+                space = name.IndexOf(' ', space);
+                if (space > 0)
                 {
                     space++;
                     initial += name[space];

@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -14,7 +19,7 @@ namespace Cirkelrörelse
             const double angleMovement = .08; // current angle movement
             const double maxAngle = 2 * Math.PI;
             const int ZoomX = 25; // resizing the circle
-            const int ZoomY =  10; // resizing the circle
+            const int ZoomY = 10; // resizing the circle
             int maxX = Console.WindowWidth - 1;
             int maxY = Console.WindowHeight - 1;
             double angle = 0; // current angle
@@ -43,7 +48,7 @@ namespace Cirkelrörelse
                 if (angle > maxAngle) angle = 0; // If the angle has move a whole circle start from 0 again
                 x = middleX + Math.Cos(angle) * ZoomX; // Use Cosine to make the ball stay in a circle and enlarge the size of the circle
                 y = middleY + Math.Sin(angle) * ZoomY; // Use Sine to make the ball stay in a circle and enlarge the size of the circle
-                
+
                 if (x < 0) x = 0; // Make sure the ball is within the screens boundaries
                 if (x > maxX) x = maxX;
                 if (y < 0) y = 0;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace ClassPOCO_DTO
 {
@@ -55,9 +60,9 @@ namespace ClassPOCO_DTO
         public override string ToString()
         {
             return Name + " " + Lastname + " born on " +
-                   BirthDate.ToString("yyyy MMM dd, ddd") + 
+                   BirthDate.ToString("yyyy MMM dd, ddd") +
                    ", is " + Age + " old" +
-                   "\nLives on " + Address.Street+ ", " + Address.City;
+                   "\nLives on " + Address.Street + ", " + Address.City;
         }
     }
 

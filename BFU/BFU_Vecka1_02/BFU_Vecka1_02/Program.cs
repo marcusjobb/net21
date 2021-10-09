@@ -1,4 +1,9 @@
-﻿namespace BFU_Vecka1_02
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace BFU_Vecka1_02
 {
     using System;
 
@@ -15,7 +20,6 @@
 
             // tilldelar ett värde
             x = 10;
-
 
             Console.WriteLine(x);
         }

@@ -1,4 +1,9 @@
-﻿namespace BFU_Vecka1_01 // Hus
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace BFU_Vecka1_01 // Hus
 {
     using System; // Vi kommer att använda saker från det huset
 
@@ -22,7 +27,7 @@
 
             string girlfriend = "Celina Kyle";
 
-            Console.WriteLine(hero+ " <3 " + girlfriend);
+            Console.WriteLine(hero + " <3 " + girlfriend);
 
             Console.BackgroundColor = ConsoleColor.DarkBlue;
 

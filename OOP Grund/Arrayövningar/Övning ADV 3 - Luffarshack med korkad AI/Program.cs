@@ -1,4 +1,9 @@
-﻿namespace Övning_ADV_3___Luffarshack_med_korkad_AI
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Övning_ADV_3___Luffarshack_med_korkad_AI
 {
     using System;
 

@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace BFU_Vecka2_05
 {
@@ -24,7 +29,7 @@ namespace BFU_Vecka2_05
             Console.WriteLine($"Summa: {sum}");
             //e. Skriv även ut genomsnittspriset för alla produkter i listan (avrunda gärna till två
             //decimaler).
-            Console.WriteLine($"Genomsnittspris: {sum/products.Length}");
+            Console.WriteLine($"Genomsnittspris: {sum / products.Length}");
 
         }
     }

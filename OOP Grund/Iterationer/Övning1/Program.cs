@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Övning1
 {
@@ -9,14 +14,14 @@ namespace Övning1
             int memory = 0;
             int value = 0;
             // vi vet inte hur många gånger loopen ska köras
-            while (value>=0)
+            while (value >= 0)
             {
                 Console.Write("Ange ett värde:");
                 string input = Console.ReadLine();
                 int.TryParse(input, out value);
                 memory += value;
             }
-            Console.WriteLine("Sum is :"+memory);
+            Console.WriteLine("Sum is :" + memory);
         }
     }
 }

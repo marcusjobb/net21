@@ -1,4 +1,9 @@
-﻿namespace BFU_Vecka1_08
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace BFU_Vecka1_08
 {
     using System;
 
@@ -9,7 +14,7 @@
             bool answer = true;
             Console.Write("Är du smart? (j/n)");
             string input = Console.ReadLine().ToUpper();
-            
+
             if (input[0] == 'J') //första bokstaven
                 answer = true;
             else

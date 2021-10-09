@@ -1,4 +1,9 @@
-﻿namespace DictionaryDemo
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace DictionaryDemo
 {
     using System;
     using System.Collections.Generic;
@@ -22,7 +27,6 @@
             {
                 heroes.Add("Green Arrow", "Oliver Quinn");
             }
-
 
             Console.WriteLine("Hello " + heroes["Equalizer"]);
 
@@ -50,7 +54,6 @@
             //SortedDictionary<string, SortedDictionary<string, string>> all = new();
             //all.Add("Heroes", heroes);
             //all.Add("Villians", villians);
-
 
             //foreach (var people in all)
             //{

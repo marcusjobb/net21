@@ -1,4 +1,9 @@
-﻿namespace BFU_Vecka1_04
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace BFU_Vecka1_04
 {
     using System;
 
@@ -8,7 +13,7 @@
         {
             Console.WriteLine("Vad heter din favoritsuperhjälte");
             string hero = Console.ReadLine();
-            Console.WriteLine(hero+ " är super cool!");
+            Console.WriteLine(hero + " är super cool!");
         }
 
         //static string Input(string text)

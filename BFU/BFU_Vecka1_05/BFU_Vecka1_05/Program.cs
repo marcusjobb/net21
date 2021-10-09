@@ -1,4 +1,9 @@
-﻿namespace BFU_Vecka1_05
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace BFU_Vecka1_05
 {
     using System;
 
@@ -30,6 +35,6 @@
             Console.WriteLine();
             Console.WriteLine();
 
-         }
+        }
     }
 }

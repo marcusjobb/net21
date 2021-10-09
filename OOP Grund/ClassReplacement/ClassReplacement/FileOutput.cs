@@ -1,6 +1,10 @@
-﻿namespace ClassReplacement
+﻿// -----------------------------------------------------------------------------------------------
+//  FileOutput.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace ClassReplacement
 {
-    using System;
     using System.IO;
 
     internal class FileOutput : Output

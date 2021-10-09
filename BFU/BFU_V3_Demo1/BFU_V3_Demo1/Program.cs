@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace BFU_V3_Demo1
 {
@@ -24,7 +29,6 @@ namespace BFU_V3_Demo1
             //    counter++;
             //    // c++; om c inte ändras blir det en evig loop
             //}
-
 
         }
     }

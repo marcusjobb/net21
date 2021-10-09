@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace BFU_Vecka2_04
 {
@@ -12,7 +17,7 @@ namespace BFU_Vecka2_04
             {
                 for (int l = 0; l < names[i].Length; l++)
                 {
-                    Console.Write(" "+ names[i][l]+" ");
+                    Console.Write(" " + names[i][l] + " ");
                 }
                 Console.WriteLine();
             }

@@ -1,4 +1,9 @@
-﻿namespace Festbord
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Festbord
 {
     using System;
 
@@ -23,7 +28,6 @@
                 int antalSittplatser = antalBord * antalSidoplatser + antalKantplatser;
                 Console.WriteLine($"Platser att sitta på när man har {antalBord} bord: {antalSittplatser}");
             }
-
 
         }
     }

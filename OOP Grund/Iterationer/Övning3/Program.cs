@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Övning3
 {
@@ -14,7 +19,7 @@ namespace Övning3
 
             for (int iteration = 0; iteration < value; iteration++)
             {
-                sum +=value;
+                sum += value;
             }
             Console.WriteLine("Summan är :" + sum);
 
