@@ -1,4 +1,9 @@
-﻿namespace OOPDemo3
+﻿// -----------------------------------------------------------------------------------------------
+//  Cat.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace OOPDemo3
 {
     // POCO = Plain Old C Object
     //        Plain Old Class Object
@@ -33,7 +38,7 @@
         }
         public string Colour
         {
-            get => colour; 
+            get => colour;
             set
             {
                 colour = value.Trim();

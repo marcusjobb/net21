@@ -1,4 +1,9 @@
-﻿namespace OOPDemo2
+﻿// -----------------------------------------------------------------------------------------------
+//  ClassLifetime.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace OOPDemo2
 {
     internal class ClassLifetime
     {

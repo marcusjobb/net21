@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Temperature
 {
@@ -12,13 +17,13 @@ namespace Temperature
             do
             {
                 Console.WriteLine("Ange temperaturen i Celcius");
-                 input = Console.ReadLine();
+                input = Console.ReadLine();
             } while (!double.TryParse(input, out celcius));
 
             double fahrenheit = temp.CelciusToFahrenheit(celcius);
             double kelvin = temp.CelciusToKelvin(celcius);
             Console.WriteLine(celcius + " grader i Celcius är " + fahrenheit + " grader i Fahrenheit");
-            Console.WriteLine(celcius + " grader i Celcius är " + kelvin+ " grader i Kelvin");
+            Console.WriteLine(celcius + " grader i Celcius är " + kelvin + " grader i Kelvin");
 
             // Du har en klass som omvandlar
             // Celcius till Fahrenheit
@@ -29,7 +34,7 @@ namespace Temperature
             // Fahrenheit till Kelvin
             // Kelvin till Celcius
             // Kelvin till Fahrenheit
-            
+
         }
     }
 }

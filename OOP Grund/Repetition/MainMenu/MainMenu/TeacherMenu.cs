@@ -1,7 +1,11 @@
-﻿namespace MainMenu
+﻿// -----------------------------------------------------------------------------------------------
+//  TeacherMenu.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace MainMenu
 {
     using System;
-    using System.Collections.Generic;
 
     public class TeacherMenu : Menu
     {
@@ -24,14 +28,14 @@
             string bottom = "╚" + new string('═', maxWidth) + "╝";
 
             Console.WriteLine(top);
-            Console.WriteLine(Center(Title,maxWidth));
+            Console.WriteLine(Center(Title, maxWidth));
             Console.WriteLine(middle);
             Console.WriteLine(Pretty("", maxWidth));
             for (int i = 0; i < MenuOptions.Count; i++)
             {
                 // Lägger till 1 i menyvalen för att användaren inte ska behöva tänka på att
                 // börja från 0
-                Console.WriteLine(Pretty("[" + (i + 1) + "] " + MenuOptions[i],maxWidth));
+                Console.WriteLine(Pretty("[" + (i + 1) + "] " + MenuOptions[i], maxWidth));
             }
             Console.WriteLine(Pretty("", maxWidth));
             Console.WriteLine(bottom);
@@ -39,12 +43,12 @@
 
         private static string Pretty(string text, int maxWidth)
         {
-            return  "║ " + text.PadRight(maxWidth-2) + " ║";
+            return "║ " + text.PadRight(maxWidth - 2) + " ║";
         }
         private static string Center(string text, int maxWidth)
         {
             var spaces = maxWidth - 2 - (text.Length / 2);
-            return Pretty(text.PadLeft(spaces),maxWidth);
+            return Pretty(text.PadLeft(spaces), maxWidth);
         }
     }
 }
