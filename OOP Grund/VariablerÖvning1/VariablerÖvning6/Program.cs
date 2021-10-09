@@ -1,4 +1,9 @@
-﻿namespace VariablerÖvning6
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace VariablerÖvning6
 {
     using System;
 
@@ -27,12 +32,12 @@
             double kelvin = celcius + 273.15;
 
             Console.WriteLine("A");
-            Console.WriteLine("Celcius    :" + Math.Round(celcius,2));
+            Console.WriteLine("Celcius    :" + Math.Round(celcius, 2));
             Console.WriteLine("Fahrenheit :" + Math.Round(fahrenheit, 2));
             Console.WriteLine("Kelvin     :" + Math.Round(kelvin, 2));
             Console.WriteLine();
 
-            fahrenheit = double.Parse(input); 
+            fahrenheit = double.Parse(input);
             celcius = (fahrenheit - 32) / 1.8;
             kelvin = (fahrenheit + 459.67) / 1.8;
 

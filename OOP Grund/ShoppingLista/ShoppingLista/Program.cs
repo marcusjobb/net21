@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace ShoppingLista
 {
@@ -21,7 +26,7 @@ namespace ShoppingLista
                 Console.WriteLine(items[count] + " " + prices[count] + ":-");
                 sum += prices[count];
             }
-            Console.WriteLine("Summa: "+sum);
+            Console.WriteLine("Summa: " + sum);
         }
     }
 }

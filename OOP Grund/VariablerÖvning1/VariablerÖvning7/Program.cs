@@ -1,4 +1,9 @@
-﻿namespace VariablerÖvning7
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace VariablerÖvning7
 {
     using System;
 
@@ -23,7 +28,7 @@
     {
         static void Main(string[] args)
         {
-            double percent = 15/100.0;
+            double percent = 15 / 100.0;
             double tvVarberg = 6990;
             double tvGöteborg = 7220;
             double fuel = 16.53;

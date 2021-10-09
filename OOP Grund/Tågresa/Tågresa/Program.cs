@@ -1,4 +1,9 @@
-﻿namespace Tågresa
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Tågresa
 {
     using System;
 
@@ -36,14 +41,12 @@
                 int frammeTimme = 11;
                 int frammeMinut = 33;
 
-                DateTime start = new DateTime(idag.Year, idag.Month, idag.Day, startTimme,startMinut, 00);
-                DateTime framme = new DateTime(idag.Year, idag.Month, idag.Day, frammeTimme,frammeMinut, 00);
+                DateTime start = new DateTime(idag.Year, idag.Month, idag.Day, startTimme, startMinut, 00);
+                DateTime framme = new DateTime(idag.Year, idag.Month, idag.Day, frammeTimme, frammeMinut, 00);
                 TimeSpan resTid = framme - start;
                 // Skriv ut resultatet
                 Console.WriteLine($"Resan tar {resTid.Hours:00}:{resTid.Minutes:00}");
             }
-
-
 
         }
     }

@@ -1,4 +1,9 @@
-﻿namespace RepetitionV37  // Hus
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace RepetitionV37  // Hus
 {
     using System;
 
@@ -12,9 +17,6 @@
         private static void Main(string[] args) // Möbel
         {
             AskForNumber(maxValue: 5, minValue: 3);
-
-
-
         }
         //          returvärde
         //          |

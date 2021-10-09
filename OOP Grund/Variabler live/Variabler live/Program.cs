@@ -1,4 +1,9 @@
-﻿namespace Variabler_live //hus
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Variabler_live //hus
 {
     using System; // hus
     class Program // rum
@@ -23,7 +28,6 @@
             //Console.ResetColor();
             //Console.Clear(); // rensa skärmen
 
-
             // Grunddata
             int pelle = 8;
             int kalle = 12;
@@ -41,7 +45,7 @@
             // Presentera
             Console.WriteLine(apples);
             Console.WriteLine(totalText);
-            Console.WriteLine("Svaret på allt "+TheAnswer);
+            Console.WriteLine("Svaret på allt " + TheAnswer);
         }
     }
 }

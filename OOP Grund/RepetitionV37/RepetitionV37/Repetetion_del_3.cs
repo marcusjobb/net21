@@ -1,4 +1,9 @@
-﻿namespace Net21RepetitionV37
+﻿// -----------------------------------------------------------------------------------------------
+//  Repetetion_del_3.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace Net21RepetitionV37
 {
 
     public class Repetetion_del_3

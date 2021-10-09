@@ -44,7 +44,6 @@
                     break;
             }
 
-
             string resultat = value switch
             {
                 1337 => "Leet",
@@ -61,12 +60,17 @@
             switch (dir)
             {
                 case Directions.North:
+                    Console.WriteLine("Gå nord");
                     break;
                 case Directions.East:
+                    Console.WriteLine("Gå öst");
                     break;
                 case Directions.South:
+                    Console.WriteLine("Gå Söder");
                     break;
                 case Directions.West:
+                    Console.WriteLine("Gå väst");
+                    // https://www.youtube.com/watch?v=LNBjMRvOB5M&t=1s
                     break;
                 default:
                     break;

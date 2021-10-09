@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Övning2___Åldersgrupper
 {
@@ -9,7 +14,7 @@ namespace Övning2___Åldersgrupper
             Console.WriteLine("Hur gammal är du");
             string input = Console.ReadLine();
             int.TryParse(input, out var age);
-            if (age>14)
+            if (age > 14)
             {
                 Console.WriteLine("Du får köra moped");
             }

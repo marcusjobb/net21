@@ -1,4 +1,9 @@
-﻿namespace VariablerÖvning1
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace VariablerÖvning1
 {
     using System;
 
@@ -18,20 +23,20 @@
             //hej hej
             // Definiera
             // Hej
-            
+
             float sidaA = 3.5f;
             float sidaB = 2.4f;
             float sidaC = 2.2f;
-           
-            
+
+
             // Bearbeta
             float omkrets = sidaA + sidaB + sidaC;
             float area = sidaB * sidaC;
 
             // Presentera
-            Console.WriteLine("Omkretsen är "+omkrets);
-            Console.WriteLine("Arean är "+area);
-           
+            Console.WriteLine("Omkretsen är " + omkrets);
+            Console.WriteLine("Arean är " + area);
+
         }
     }
 }

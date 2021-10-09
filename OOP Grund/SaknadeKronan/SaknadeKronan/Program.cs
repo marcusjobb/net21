@@ -1,4 +1,9 @@
-﻿namespace SaknadeKronan
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+namespace SaknadeKronan
 {
     using System;
 
@@ -48,7 +53,7 @@
             Console.WriteLine($"och donerade 2 kronor");
             utlägg += 2;
             Console.WriteLine($"Summan blir: {utlägg}");
-            if(utlägg != 30) Console.WriteLine($"Error 404: Krona not found");
+            if (utlägg != 30) Console.WriteLine($"Error 404: Krona not found");
         }
     }
 }

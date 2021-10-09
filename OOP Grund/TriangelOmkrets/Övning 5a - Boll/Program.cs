@@ -1,4 +1,9 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Övning_5a___Boll
 {
@@ -26,7 +31,7 @@ namespace Övning_5a___Boll
                 bollX += bollXH;
                 bollY += bollYH;
 
-                if (bollX>=maxX)
+                if (bollX >= maxX)
                 {
                     bollXH = -bollXH;
                     continue;
@@ -51,12 +56,12 @@ namespace Övning_5a___Boll
 
                 Console.SetCursorPosition(bollX, bollY);
                 Console.WriteLine(".---.");
-                Console.SetCursorPosition(bollX, bollY+1);
+                Console.SetCursorPosition(bollX, bollY + 1);
                 Console.WriteLine("'---'");
                 System.Threading.Thread.Sleep(50);
                 Console.SetCursorPosition(bollX, bollY);
                 Console.WriteLine("     ");
-                Console.SetCursorPosition(bollX, bollY+1);
+                Console.SetCursorPosition(bollX, bollY + 1);
                 Console.WriteLine("     ");
             }
 
