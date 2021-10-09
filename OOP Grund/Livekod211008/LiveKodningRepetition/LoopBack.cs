@@ -9,10 +9,6 @@ namespace LiveKodningRepetition
 
     internal class LoopBack
     {
-        public LoopBack()
-        {
-        }
-
         internal void Start()
         {
             //          123456 = array length
@@ -23,6 +19,8 @@ namespace LiveKodningRepetition
                 Console.Write(name[n]);
             }
 
+            // En for-sats är egentligen tre kommandon i ett, precis som en While
+            // En räknare, ett villkor och inkrementering av räknaren
             for (
                 int i = 0;
                 i <= name.Length;

@@ -20,7 +20,7 @@ namespace LiveKodningRepetition
 
             //Console.WriteLine();
             //int x = 0;
-            //for (; ; )
+            //for (; ; ) // Knasigt men det funkar!
             //{
             //    if (x > 9) break;
             //    Console.Write($"{x} ");

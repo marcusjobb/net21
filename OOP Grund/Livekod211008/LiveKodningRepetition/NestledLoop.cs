@@ -16,12 +16,30 @@ namespace LiveKodningRepetition
                 for (int x = 0; x < 10; x++)
                 {
                     if (y > 0 && y < 9) // Om det är första eller sista raden
-                        if (x == 0 || x == 9)
-                            Console.Write("X");
+                        if (x == 0 || x == 9) // Om det är första eller sista kolumnen
+                            Console.Write("X"); // Skriv ut ett X
                         else
-                            Console.Write(".");
+                            Console.Write("."); // Skriv ut en punkt
                     else
                         Console.Write("X");
+                }
+                Console.WriteLine();
+            }
+
+            // --------------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Alternativ lösning");
+            const int maxWidth = 20;
+            const int maxHeight = 10;
+            for (int y = 0; y < maxHeight; y++)
+            {
+                for (int x = 0; x < maxWidth; x++)
+                {
+                    bool wall = (y == 0 || y == maxHeight-1) || (x == 0 || x == maxWidth-1);
+                    if (wall)
+                        Console.Write("X"); // Skriv ut ett X
+                    else
+                        Console.Write("."); // Skriv ut en punkt
                 }
                 Console.WriteLine();
             }

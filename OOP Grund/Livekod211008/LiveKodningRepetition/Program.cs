@@ -10,7 +10,7 @@ namespace LiveKodningRepetition
         static void Main()
         {
             // Project 
-            var demo = new PrivateAndProtected();
+            var demo = new NestledLoop();
             demo.Start();
         }
     }

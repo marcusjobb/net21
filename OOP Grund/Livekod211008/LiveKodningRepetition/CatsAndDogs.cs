@@ -42,12 +42,16 @@ namespace LiveKodningRepetition
     {
         internal void Start()
         {
+            // Alla djur kan finnas i Animal listan
             List<Animal> animals = new()
             {
                 new Cat { Name = "Bombalurina", Age = 5 },
                 new Dog { Name = "Rover", Age = 7 }
             };
 
+            // Dock kan vi inte se specifika djuregenskaper utan bara de
+            // egenskaper som tillhör Animal klassen och är gemensamma för
+            // alla som ärver Animal
             foreach (var animal in animals)
             {
                 Console.WriteLine(animal);

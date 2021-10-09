@@ -29,7 +29,7 @@ namespace LiveKodningRepetition
         public Male()
         {
             Name = "Kalle";
-            age = 160;
+            age = 160; // Sätter värdet utan att använda property!
         }
     }
 
@@ -43,7 +43,10 @@ namespace LiveKodningRepetition
         internal void Start()
         {
             Human man = new Male();
-            //man.Age = 152;
+            Console.WriteLine(man.Age);
+            Console.WriteLine(man.IsDead);
+            Console.WriteLine();
+            man.Age = 152; // Använder property
             Console.WriteLine(man.Age);
             Console.WriteLine(man.IsDead);
         }
