@@ -1,10 +1,15 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------------------------
+//  Program.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
+//  Published under GNU General Public License v3 (GPL-3)
+// -----------------------------------------------------------------------------------------------
+
+using System;
 
 namespace Inlämning2Demo
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var ph = new PeopleHandler();
             var person = new Person { Name = "Marcus", LastName = "Medina", Alias = "Marmed" };
@@ -27,7 +32,6 @@ namespace Inlämning2Demo
 
             ph.Delete(deleteThis);
             PrintList(ph);
-
         }
 
         private static void PrintList(PeopleHandler ph)
