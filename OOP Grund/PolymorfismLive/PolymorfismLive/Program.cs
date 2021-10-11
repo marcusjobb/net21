@@ -6,7 +6,7 @@ namespace PolymorfismLive
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IItemPurchaseable item = new IItemPurchaseable();
         }
     }
 }
