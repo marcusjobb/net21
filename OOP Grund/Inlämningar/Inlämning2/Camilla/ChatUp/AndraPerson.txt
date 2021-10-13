@@ -1,0 +1,52 @@
+                        Console.WriteLine("Vilken av dessa vill du ändra? Välj förstabokstav på alias!");
+                        string ss = Console.ReadLine().ToLower().Trim();
+                        foreach (var item in minaKontakter.MyContacts)
+                        {
+                            if ((item.Alias).Substring(0, 1) == ss)
+                            {
+                                Console.WriteLine("Vilken av egenskaperna vill du ändra?");
+                                Console.WriteLine("[F]örnamn");
+                                Console.WriteLine("[E]fternamn");
+                                Console.WriteLine("[A]lias");
+                                //Console.WriteLine("[E]mejl-adress");
+                                //Console.WriteLine("[F]acebookprofil");
+                                //Console.WriteLine("[I]nstagramprofil");
+                                //Console.WriteLine("[B]lockerad");
+                                //Console.WriteLine("[G]hostad");
+                                //Console.WriteLine("[L]inkedInProfil");
+                                //Console.WriteLine("[T]witterprofil");
+                                string input = Console.ReadLine().Trim().ToLower();
+                                switch (input)
+                                {
+                                    case "f":
+                                        Console.WriteLine("Du valde " + input);
+                                        Console.Write("Skriv in nytt förnamn: ");
+                                        f = Console.ReadLine().Trim();
+                                        item.FirstName = f;
+                                        Console.WriteLine("Du har uppdaterat " + item.Alias + " med förnamnet: " + f + ". Personens fullständiga information är nu: " + item.Alias + " " + item.FirstName + " " + item.LastName);
+                                        break;
+                                    case "e":
+                                        Console.WriteLine("Du valde " + input);
+                                        Console.Write("Skriv in nytt efternamn: ");
+                                        l = Console.ReadLine().Trim();
+                                        item.LastName = l;
+                                        Console.WriteLine("Du har uppdaterat " + item.Alias + " med efternamn: " + l + ". Personens fullständiga information är nu: " + item.Alias + " " + item.FirstName + " " + item.LastName);
+                                        break;
+                                    case "a":
+                                        Console.WriteLine("Du valde " + input);
+                                        Console.Write("Skriv in nytt alias: ");
+                                        a = Console.ReadLine().Trim();
+                                        item.Alias = a;
+                                        Console.WriteLine("Du har uppdaterat " + item.Alias + " med aliaset: " + a + ". Personens fullständiga information är nu: " + item.Alias + " " + item.FirstName + " " + item.LastName);
+                                        break;
+
+                                    default:
+                                        Console.WriteLine("Ogitligt val - försök igen!");
+                                        break;
+                                }
+                            }
+                            else // lägga till if?
+                            {
+                                Console.WriteLine("Fanns ingen med den begynnelsebokstaven."); // Funkar delvis - ej efter ändring
+                            }
+                        }

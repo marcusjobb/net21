@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatUpNameList", "ChatUpNameList\ChatUpNameList.csproj", "{B397E7A6-8408-4609-8C9E-991992295BCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B397E7A6-8408-4609-8C9E-991992295BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B397E7A6-8408-4609-8C9E-991992295BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B397E7A6-8408-4609-8C9E-991992295BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B397E7A6-8408-4609-8C9E-991992295BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81E28F5E-939D-4DF7-A355-A8993B260486}
+	EndGlobalSection
+EndGlobal
