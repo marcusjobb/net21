@@ -1,0 +1,4 @@
+Resurser:
+1- https://www.w3schools.com/sql/
+
+2- https://github.com/

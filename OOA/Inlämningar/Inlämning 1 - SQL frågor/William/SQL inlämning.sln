@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL inlämning", "SQL inlämning\SQL inlämning.csproj", "{F60396CB-32C4-4508-A79A-D3F8FB3676CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F60396CB-32C4-4508-A79A-D3F8FB3676CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60396CB-32C4-4508-A79A-D3F8FB3676CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60396CB-32C4-4508-A79A-D3F8FB3676CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60396CB-32C4-4508-A79A-D3F8FB3676CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4675239-2F1C-423D-B11C-5BBBC5CB5A80}
+	EndGlobalSection
+EndGlobal

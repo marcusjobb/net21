@@ -1,0 +1,25 @@
+name: .NET
+
+on:
+  push:
+    branches: [main,prod,dev]
+  pull_request:
+    branches: [ main,prod,dev ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore OOA-Inlamning1
+    - name: Build
+      run: dotnet build --no-restore OOA-Inlamning1
+    - name: Test
+      run: dotnet test --no-build --verbosity normal OOA-Inlamning1
