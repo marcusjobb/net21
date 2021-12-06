@@ -4,7 +4,6 @@ using Figgle;
 using PizzaMums.Enums;
 using PizzaMums.Factories;
 using PizzaMums.Interfaces;
-using PizzaMums.Pizzas;
 
 GenerateBanner("Pizza Mums");
 ListAllPizzas();

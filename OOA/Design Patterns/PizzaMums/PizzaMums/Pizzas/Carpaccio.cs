@@ -7,7 +7,7 @@ namespace PizzaMums.Pizzas
 {
     using System.Collections.Generic;
 
-    internal class Carpaccio:Pizza
+    internal class Carpaccio : Pizza
     {
         public Carpaccio()
         {
@@ -17,5 +17,4 @@ namespace PizzaMums.Pizzas
             Price = 149;
         }
     }
-
 }

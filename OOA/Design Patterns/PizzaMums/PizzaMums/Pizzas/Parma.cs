@@ -12,7 +12,7 @@ namespace PizzaMums.Pizzas
         public Parma()
         {
             Name = this.GetType().Name;
-            Ingredients = new List<string> {"San Marzano Tomatsås","Fior Di Latte","Lufttorkad Skinka","Körsbärstomater","Oliver Och Pesto"};
+            Ingredients = new List<string> { "San Marzano Tomatsås", "Fior Di Latte", "Lufttorkad Skinka", "Körsbärstomater", "Oliver Och Pesto" };
             IsFolded = false;
             Price = 150;
         }

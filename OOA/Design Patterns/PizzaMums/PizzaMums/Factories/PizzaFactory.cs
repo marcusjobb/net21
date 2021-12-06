@@ -18,12 +18,12 @@ namespace PizzaMums.Factories
             IPizza baked = pizza switch
             {
                 PizzaType.Buffala => new Buffala(),
-                PizzaType.Carpaccio=> new Carpaccio(),
-                PizzaType.Chevre=> new Chevre(),
+                PizzaType.Carpaccio => new Carpaccio(),
+                PizzaType.Chevre => new Chevre(),
                 PizzaType.Diavola => new Diavola(),
                 PizzaType.Marguerita => new Marguerita(),
-                PizzaType.Parma=> new Parma(),
-                PizzaType.Ruccola=> new Ruccola(),
+                PizzaType.Parma => new Parma(),
+                PizzaType.Ruccola => new Ruccola(),
                 PizzaType.Tartufo => new Tartufo(),
                 PizzaType.Vego => new Vego(),
                 _ => new Pizza(),

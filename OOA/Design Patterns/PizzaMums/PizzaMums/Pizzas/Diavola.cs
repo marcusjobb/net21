@@ -5,10 +5,7 @@
 
 namespace PizzaMums.Pizzas
 {
-    using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Xml.Linq;
 
     internal class Diavola : Pizza
     {

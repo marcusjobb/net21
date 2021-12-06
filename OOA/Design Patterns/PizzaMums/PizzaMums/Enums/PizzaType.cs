@@ -9,10 +9,10 @@ namespace PizzaMums.Enums
     internal enum PizzaType
     {
         Marguerita,
-        Vego, 
-        Buffala, 
-        Chevre, 
-        Carpaccio, 
+        Vego,
+        Buffala,
+        Chevre,
+        Carpaccio,
         Tartufo,
         Diavola,
         Parma,

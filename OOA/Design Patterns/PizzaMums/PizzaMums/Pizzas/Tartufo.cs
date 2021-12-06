@@ -16,7 +16,5 @@ namespace PizzaMums.Pizzas
             IsFolded = false;
             Price = 149;
         }
-
     }
-
 }
