@@ -10,18 +10,22 @@ namespace PizzaMums.Factories
     using PizzaMums.Pizzas;
 
     // Inspiration https://www.pizzeriamums.se/pizzamenyn/
+    // För att de har de bästa pizzorna i Mölndal (i mitt tycke)
     internal static class PizzaFactory
     {
         public static IPizza Bake(PizzaType pizza, bool Glutenfri = false, bool Familjepizza = false)
         {
             IPizza baked = pizza switch
             {
-                PizzaType.Marguerita => new Marguerita(),
-                PizzaType.Vego => new Vego(),
                 PizzaType.Buffala => new Buffala(),
-                PizzaType.Chevre=> new Chevre(),
                 PizzaType.Carpaccio=> new Carpaccio(),
-                PizzaType.Tartufo=> new Tartufo(),
+                PizzaType.Chevre=> new Chevre(),
+                PizzaType.Diavola => new Diavola(),
+                PizzaType.Marguerita => new Marguerita(),
+                PizzaType.Parma=> new Parma(),
+                PizzaType.Ruccola=> new Ruccola(),
+                PizzaType.Tartufo => new Tartufo(),
+                PizzaType.Vego => new Vego(),
                 _ => new Pizza(),
             };
 
