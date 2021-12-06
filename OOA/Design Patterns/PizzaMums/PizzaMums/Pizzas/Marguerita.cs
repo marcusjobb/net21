@@ -3,15 +3,9 @@
 //  Published under GNU General Public License v3 (GPL-3)
 // -----------------------------------------------------------------------------------------------
 
-namespace PizzaMums.Models
+namespace PizzaMums.Pizzas
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    using PizzaMums.Interfaces;
 
     internal class Marguerita : Pizza
     {

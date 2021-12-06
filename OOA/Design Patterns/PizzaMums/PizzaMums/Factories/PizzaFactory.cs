@@ -7,29 +7,23 @@ namespace PizzaMums.Factories
 {
     using PizzaMums.Enums;
     using PizzaMums.Interfaces;
-    using PizzaMums.Models;
+    using PizzaMums.Pizzas;
 
-    internal class PizzaFactory
+    // Inspiration https://www.pizzeriamums.se/pizzamenyn/
+    internal static class PizzaFactory
     {
-        public IPizza? Bake (PizzaType pizza)
+        public static IPizza Bake(PizzaType pizza, bool Glutenfri = false, bool Familjepizza = false)
         {
-
-            IPizza? baked;
-            switch (pizza)
+            IPizza baked = pizza switch
             {
-                case PizzaType.Marguerita:
-                    baked = new Marguerita();
-                    break;
-                case PizzaType.Vego:
-                    baked = new Vego();
-                    break;
-                case PizzaType.Buffala:
-                    baked = new Buffala();
-                    break;
-                default:
-                    baked = null;
-                    break;
-            }
+                PizzaType.Marguerita => new Marguerita(),
+                PizzaType.Vego => new Vego(),
+                PizzaType.Buffala => new Buffala(),
+                _ => new Pizza(),
+            };
+
+            if (Glutenfri) baked.Price += 10;
+            if (Familjepizza) baked.Price += 75;
 
             return baked;
         }

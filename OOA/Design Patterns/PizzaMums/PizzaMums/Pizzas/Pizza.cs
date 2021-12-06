@@ -3,13 +3,9 @@
 //  Published under GNU General Public License v3 (GPL-3)
 // -----------------------------------------------------------------------------------------------
 
-namespace PizzaMums.Models
+namespace PizzaMums.Pizzas
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using PizzaMums.Interfaces;
 
@@ -19,5 +15,13 @@ namespace PizzaMums.Models
         public string Name { get; set; }
         public bool IsFolded { get; set; }
         public int Price { get; set; }
+
+        public Pizza()
+        {
+            Ingredients = new List<string> { "Tomatsås", "Ost" };
+            IsFolded = false;
+            Name = "Snålpizza";
+            Price = 65;
+        }
     }
 }
