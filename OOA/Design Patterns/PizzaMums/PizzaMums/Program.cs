@@ -8,10 +8,10 @@ using PizzaMums.Pizzas;
 
 var mumsBanner = GenerateBanner("Pizza Mums");
 ListAllPizzas();
+
 var pizza = SelectPizza();
 
 Console.Clear();
-Console.WriteLine(mumsBanner);
 PrintPizza(pizza);
 
 string GenerateBanner(string message)
