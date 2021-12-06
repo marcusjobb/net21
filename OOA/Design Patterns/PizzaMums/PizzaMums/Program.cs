@@ -8,11 +8,10 @@ using PizzaMums.Pizzas;
 
 var mumsBanner = GenerateBanner("Pizza Mums");
 ListAllPizzas();
-var type = SelectPizza();
+var pizza = SelectPizza();
 
 Console.Clear();
 Console.WriteLine(mumsBanner);
-var pizza = GetPizza(type);
 PrintPizza(pizza);
 
 string GenerateBanner(string message)
@@ -40,13 +39,13 @@ void ListAllPizzas()
     }
 }
 
-int SelectPizza()
+IPizza SelectPizza()
 {
     Console.WriteLine();
     Console.Write("Välj Pizza: ");
     var input = Console.ReadLine();
     _ = int.TryParse(input, out var type);
-    return type;
+    return GetPizza(type);
 }
 
 IPizza GetPizza(int type)
