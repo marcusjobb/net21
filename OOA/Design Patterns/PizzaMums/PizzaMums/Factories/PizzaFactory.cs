@@ -19,6 +19,9 @@ namespace PizzaMums.Factories
                 PizzaType.Marguerita => new Marguerita(),
                 PizzaType.Vego => new Vego(),
                 PizzaType.Buffala => new Buffala(),
+                PizzaType.Chevre=> new Chevre(),
+                PizzaType.Carpaccio=> new Carpaccio(),
+                PizzaType.Tartufo=> new Tartufo(),
                 _ => new Pizza(),
             };
 

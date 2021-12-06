@@ -8,6 +8,6 @@ namespace PizzaMums.Enums
     // Typer av pizza
     internal enum PizzaType
     {
-        Marguerita, Vego, Buffala
+        Marguerita, Vego, Buffala, Chevre, Carpaccio, Tartufo
     }
 }

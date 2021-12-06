@@ -11,10 +11,10 @@ namespace PizzaMums.Pizzas
     {
         public Vego()
         {
+            Name = this.GetType().Name;
             Ingredients = new List<string> { "San marzano tomatsås", "Färsk mozzarella", "Grillad aubergine och zucchini", "Kronärtskocka", "Hyvlad parmesan" };
             IsFolded = false;
-            Name = "Vego";
-            Price = 120;
+            Price = 135;
         }
     }
 }

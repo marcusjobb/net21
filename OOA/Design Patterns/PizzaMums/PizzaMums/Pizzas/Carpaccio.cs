@@ -7,14 +7,15 @@ namespace PizzaMums.Pizzas
 {
     using System.Collections.Generic;
 
-    internal class Buffala : Pizza
+    internal class Carpaccio:Pizza
     {
-        public Buffala()
+        public Carpaccio()
         {
             Name = this.GetType().Name;
-            Ingredients = new List<string> { "San marzano tomatsås", "Buffelmozarella DOP", "Körsbärstomater", "Basilika", "Olivolja extra vergine." };
+            Ingredients = new List<string> { "San Marzano Tomatsås", "Fior Di Latte", "Marinerad Oxfilé", "Pesto", "Rucola", "Hyvlad Parmesan" };
             IsFolded = false;
             Price = 149;
         }
     }
+
 }

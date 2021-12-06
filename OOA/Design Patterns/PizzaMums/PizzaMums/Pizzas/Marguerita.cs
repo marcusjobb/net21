@@ -11,9 +11,9 @@ namespace PizzaMums.Pizzas
     {
         public Marguerita()
         {
+            Name = this.GetType().Name;
             Ingredients = new List<string> { "San marzano tomatsås", "Mozzarella toppad med basilika" };
             IsFolded = false;
-            Name = "Margarita";
             Price = 120;
         }
     }

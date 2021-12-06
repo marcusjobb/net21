@@ -18,9 +18,9 @@ namespace PizzaMums.Pizzas
 
         public Pizza()
         {
+            Name = "Snålpizza";
             Ingredients = new List<string> { "Tomatsås", "Ost" };
             IsFolded = false;
-            Name = "Snålpizza";
             Price = 65;
         }
     }
