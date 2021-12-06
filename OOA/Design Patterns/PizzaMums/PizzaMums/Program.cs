@@ -6,7 +6,7 @@ using PizzaMums.Factories;
 using PizzaMums.Interfaces;
 using PizzaMums.Pizzas;
 
-var mumsBanner = GenerateBanner("Pizza Mums");
+GenerateBanner("Pizza Mums");
 ListAllPizzas();
 
 var pizza = SelectPizza();
@@ -14,14 +14,13 @@ var pizza = SelectPizza();
 Console.Clear();
 PrintPizza(pizza);
 
-string GenerateBanner(string message)
+void GenerateBanner(string message)
 {
     // Använder figlet nuget: install-package Figgle
     // font samples: http://www.figlet.org/examples.html
     var font = FiggleFonts.Ogre;
     var text = font.Render(message);
     Console.WriteLine(text);
-    return text;
 }
 
 void ListAllPizzas()
