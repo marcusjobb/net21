@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFabric", "SimpleFabric\SimpleFabric.csproj", "{649B69A6-1BC9-4A1A-894E-12623521DE9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{649B69A6-1BC9-4A1A-894E-12623521DE9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649B69A6-1BC9-4A1A-894E-12623521DE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649B69A6-1BC9-4A1A-894E-12623521DE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649B69A6-1BC9-4A1A-894E-12623521DE9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5428CC9D-D199-49E7-82B9-19D716935137}
+	EndGlobalSection
+EndGlobal
