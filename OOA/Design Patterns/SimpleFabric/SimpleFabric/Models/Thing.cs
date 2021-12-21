@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------------------------------
 //  Thing.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
-//  Published under GNU General Public License v3 (GPL-3)
+//  Published under Apache License 2.0 (Apache-2.0) 
 // -----------------------------------------------------------------------------------------------
 
 namespace SimpleFabric.Models
