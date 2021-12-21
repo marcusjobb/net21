@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Inlämning2byDB.Models.Person>
+
+<div class ="container p-3">
+    <div class ="row pt-4">
+        <div class ="col-5">
+            <h1 class ="text-primary">Family Tree List</h1>
+        </div>
+        <div class ="col-5 text-right">
+            <a asp-controller="Person" asp-action="Create" class="btn btn-primary">Create New Person</a>
+        </div>
+    </div>
+    <br />
+
+    @if (Model.Count() > 0)
+    {
+            <table class ="table table-bordered table-striped" style="width:83%">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            First Name
+                        </th>
+                        <th>
+                            Last Name
+                        </th>
+                        <th>
+                            Father Id
+                        </th>
+                        <th>
+                            Mother Id
+                        </th>
+                        <th>
+                            Manage
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var person in Model)
+                {
+                            <tr>
+                                <td width="11%">@person.Id</td>
+                                <td width="22%">@person.FirstName</td>
+                                <td width="22%">@person.LastName</td>
+                                <td width="12%">@person.FatherId</td>
+                                <td width="12%">@person.MotherId</td>
+                                <td>
+                                    @Html.ActionLink("View", "View", new { id = person.Id }) |
+                                    @Html.ActionLink("Edit", "Edit", new { id = person.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = person.Id })
+                                </td>
+                            </tr>
+                }
+                </tbody>
+            </table>
+    }
+    else
+    {
+            <p>No persons added yet</p>
+    }
+
+</div>

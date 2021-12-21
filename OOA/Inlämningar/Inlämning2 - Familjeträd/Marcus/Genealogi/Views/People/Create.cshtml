@@ -1,0 +1,68 @@
+﻿@model Genealogi.Models.Person
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeathDate" class="control-label"></label>
+                <input asp-for="DeathDate" class="form-control" />
+                <span asp-validation-for="DeathDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthPlace" class="control-label"></label>
+                <input asp-for="BirthPlace" class="form-control" />
+                <span asp-validation-for="BirthPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeathPlace" class="control-label"></label>
+                <input asp-for="DeathPlace" class="form-control" />
+                <span asp-validation-for="DeathPlace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MotherId" class="control-label"></label>
+                <select asp-for="MotherId" class ="form-control" asp-items="ViewBag.MotherId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FatherId" class="control-label"></label>
+                <select asp-for="FatherId" class ="form-control" asp-items="ViewBag.FatherId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,3 @@
+﻿Framtida planer:
+- Ändra birthdate
+- Lägga in deathdate

@@ -1,0 +1,61 @@
+Saker du behöver tänka på
+
+CRUD class
+* AddPerson(int person_ID, string first_name, string last_name, int birth_date, int death_date,int mother_id, int father_id, string family_member)
+    Skapa ett Monarchy objekt med inparametrarna som grund och spara det i databasen
+
+* AddPerson(Monarchy person)
+    Spara Monarchy objekter som kom in via inparametrarna
+    
+* FindPersom(int id)
+    Använd Linq för att hitta personen med ID = id och returnera Monarchy objektet
+
+* FindPersom(string first_name, string last_name)
+    Använd Linq för att hitta personen som matchar first_name och last_name och returnera Monarchy objektet
+
+* FindMother(int id)
+    Hämta objektet med givet ID
+    Hämta moderns Id från ditt objekt
+    hämta objekt med moderns ID
+    returnera moderns objekt
+    Tips, du kan använda FindPerson då du har ID både personen och sedan till modern
+
+* FindFather(int id)
+    Gör likadant som i FindMother
+* DeletePerson(int id)
+    Med Linq hämta objekt av personen med givet Id
+    Använd objektet för att radera från databasen
+
+* EditPerson(int id, Monarchy person)
+    Hämta personens Monarchy objekt med given Id
+    Kopiera information från person-objektet (allt utom Id)
+    Spara Monarchy objektet som fått informationen ersatt
+
+* PrintPerson(int id)
+    Hämta objekt med given Id
+    Skriv ut information om personen 
+    
+* PrintParents(int id)
+    Hämta Monarch objekt av personen med given ID
+    Skriv ut moderns och faderns information, använd PrintPerson och moder/fader ID som ditt objekt har
+
+* PrintGrandParents(int id)
+    Hämta Monarch objekt av personen med given ID
+    Skriv ut moderns och faderns information, använd PrintPerson och moder/fader ID som ditt objekt har
+    Hämta Moderns objekt och skriv ut modern moder och fadern
+    Hämta Faderns objekt och skriv ut modern moder och fadern
+    
+* ListChildren(int id)
+    Använd Linq för att söka
+    Hämta och skriv ut alla barn som har father_id == Id
+    Hämta och skriv ut alla barn som har mother_id == Id
+
+* ListNameStartsWith(string name)
+    Använd Linq för att söka matchande namn
+    Skriv ut listan med namn
+
+* ListLastNameThatStartsWith(string name)
+    Använd Linq för att söka matchande namn
+    Skriv ut listan med namn
+
+

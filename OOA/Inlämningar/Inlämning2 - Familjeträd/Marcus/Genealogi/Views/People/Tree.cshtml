@@ -1,0 +1,97 @@
+﻿@model Genealogi.ViewModels.FamilyViewModel
+@{
+ViewData["Title"] = "Tree";
+}
+
+<style>
+    .person {background-color: #555577; width:100px; height:100px; margin-right:50px; color: #fff; position: relative}
+    .person:hover {border:1px solid #fff}
+    .downLine {margin-left:40px ;width:10px; height: 100px; background-color: #000; vertical-align:top;}
+</style>
+
+<h1>Tree</h1>
+<div style="text-align:center">
+    @if(Model.Person.FatherId != null)
+    {
+        <div style="display: inline-block; vertical-align:top; position: relative">
+            <div onclick="location.href='@Url.Action("Tree", "People", new {Id = Model.Person.FatherId})'" class="person">
+                @Model.Person.Father.Name
+                @Model.Person.Father.LastName
+            </div>
+            <div class="downLine"></div>
+            <button onclick="location.href='@Url.Action("Edit", "People", new {Id = Model.Person.FatherId})'" class="btn-secondary" style="position:absolute; top:0px; right:20px;"><i class="bi bi-pencil-square"></i></button>
+        </div>
+    }
+    
+    @if (Model.Person.MotherId != null)
+    {
+        <div style="display: inline-block; vertical-align:top; position: relative">
+            <div onclick="location.href='@Url.Action("Tree", "People", new {Id = Model.Person.MotherId})'"  class="person">
+                @Model.Person.Mother.Name
+                @Model.Person.Mother.LastName
+            </div>
+            <div class="downLine"></div>
+            <button onclick="location.href='@Url.Action("Edit", "People", new {Id = Model.Person.MotherId})'" class="btn-secondary" style="position:absolute; top:0px; right:20px;"><i class="bi bi-pencil-square"></i></button>
+        </div>
+    }
+</div>
+
+<div style="text-align:center">
+    <div style="vertical-align:top">
+        <div style="width:100%; height: 10px; background-color: #000"></div>
+    </div>
+</div>
+    
+<div style="text-align:center">
+    <!--
+    Antal div = antal syskon
+    -->
+    @foreach(var sibling in Model.Siblings)
+    {
+        if(sibling.Id==Model.Person.Id)
+        {
+            <div style="display: inline-block; vertical-align:top; position:relative">
+                <div class="downLine"></div>
+                <div onclick="location.href='@Url.Action("Tree", "People", new {Id = sibling.Id})'" class="person" style="border:1px solid #00ff00; background:url( data:image/jpeg;base64,@if(@Model is not null && @Model.Person.Image!=null){Convert.ToBase64String(@Model.Person.Image);})">
+                    @sibling.Name
+                </div>
+                <div class="downLine"></div>
+                <button onclick="location.href='@Url.Action("Edit", "People", new {Id = sibling.Id})'" class="btn-secondary" style="position:absolute; top:100px; right:20px;"><i class="bi bi-pencil-square"></i></button>
+            </div>
+        }
+        else
+        {
+            <div style="display: inline-block; vertical-align:top; position:relative">
+                <div class="downLine"></div>
+                <div onclick="location.href='@Url.Action("Tree", "People", new {Id = sibling.Id})'" class="person">
+                    @sibling.Name
+                </div>
+                <button onclick="location.href='@Url.Action("Edit", "People", new {Id = sibling.Id})'" class="btn-secondary" style="position:absolute; top:100px; right:20px;"><i class="bi bi-pencil-square"></i></button>
+            </div>
+
+        }
+        
+    }
+</div>
+
+<div style="text-align:center">
+    <div style="vertical-align:top">
+        <div style="width:100%; height: 10px; background-color: #000"></div>
+    </div>
+</div>
+
+<div style="text-align:center">
+    <!--
+    Antal div = antal barn
+    -->
+    @foreach(var kid in Model.Kids)
+    {
+        <div style="display: inline-block; vertical-align:top; position:relative">
+            <div class="downLine"></div>
+            <div onclick="location.href='@Url.Action("Tree", "People", new {Id = kid.Id})'" class="person">
+                @kid.Name
+            </div>
+            <button onclick="location.href='@Url.Action("Edit", "People", new {Id = kid.Id})'" class="btn-secondary" style="position:absolute; top:100px; right:20px;"><i class="bi bi-pencil-square"></i></button>
+        </div>
+    }
+</div>
