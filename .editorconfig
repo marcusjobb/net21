@@ -217,3 +217,5 @@ dotnet_naming_style.begins_with_i.required_prefix = I
 dotnet_naming_style.begins_with_i.required_suffix = 
 dotnet_naming_style.begins_with_i.word_separator = 
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
+
+file_header_template=-----------------------------------------------------------------------------------------------\n {fileName} by Marcus Medina, Copyright (C) 2021, http://MarcusMedina.Pro.\n Published under Apache License 2.0 (Apache-2.0)\n https://www.tldrlegal.com/l/apache2\n-----------------------------------------------------------------------------------------------
