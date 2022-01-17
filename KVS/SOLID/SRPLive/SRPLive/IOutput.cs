@@ -9,7 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Interface for output handler
+/// </summary>
 internal interface IOutput
 {
-    void Print(string text);
+    /// <summary>
+    /// Prints the specified text.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    void Print (string text);
 }

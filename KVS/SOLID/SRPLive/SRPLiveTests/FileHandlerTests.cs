@@ -7,10 +7,15 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SRPLive;
 
-
+/// <summary>
+/// Test for Filehandler
+/// </summary>
 [TestClass()]
 public class FileHandlerTests
 {
+    /// <summary>
+    /// Loads the test file that does not exist.
+    /// </summary>
     [TestMethod()]
     public void LoadTestFileDoesNotExist ()
     {
@@ -24,6 +29,9 @@ public class FileHandlerTests
         Assert.AreEqual(string.Empty, actual);
     }
 
+    /// <summary>
+    /// Loads the test file that does exist.
+    /// </summary>
     [TestMethod()]
     public void LoadTestFileDoesExist ()
     {
@@ -40,6 +48,9 @@ public class FileHandlerTests
         Assert.AreEqual(expected, actual);
     }
 
+    /// <summary>
+    /// Tries to save the test when write protected.
+    /// </summary>
     [TestMethod()]
     public void SaveTestWhenWriteProtected ()
     {
@@ -55,6 +66,9 @@ public class FileHandlerTests
         Assert.IsFalse(File.Exists(filename));
     }
 
+    /// <summary>
+    /// Saves the test.
+    /// </summary>
     [TestMethod()]
     public void SaveTest ()
     {
@@ -68,5 +82,4 @@ public class FileHandlerTests
         // Assert
         Assert.IsTrue(File.Exists(filename));
     }
-
 }

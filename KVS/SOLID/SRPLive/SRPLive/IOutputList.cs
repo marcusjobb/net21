@@ -6,7 +6,14 @@
 namespace SRPLive;
 using System.Collections.Generic;
 
+/// <summary>
+/// Outputs a list
+/// </summary>
 internal interface IOutputList
 {
+    /// <summary>
+    /// Prints the specified text.
+    /// </summary>
+    /// <param name="text">The text.</param>
     void Print (List<string> text);
 }

@@ -10,66 +10,100 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Text handler class
+/// </summary>
 internal class Text
 {
-    public List<string> Contents { get; set; } = new();
     /// <summary>
-    /// Omvandlar text sträng till en lista
+    /// Gets or sets the contents of the text.
     /// </summary>
-    /// <param name="text">En massa text i en sträng</param>
+    /// <value>
+    /// The contents (a string list).
+    /// </value>
+    public List<string> Contents { get; set; } = new();
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Text"/> class.
+    /// </summary>
+    /// <param name="text">The text.</param>
     public Text (string text)
     {
         Contents = new(text.Split(Environment.NewLine));
     }
+
     /// <summary>
-    /// Kopierar en lista med strängar till vår Content lista
+    /// Initializes a new instance of the <see cref="Text"/> class.
     /// </summary>
-    /// <param name="list">Lista med strängar</param>
+    /// <param name="list">The list.</param>
     public Text (List<string> list)
     {
         Contents = list;
     }
     /// <summary>
-    /// Tar emot ett Text objekt och kopierar dess innehåll
+    /// Initializes a new instance of the <see cref="Text"/> class.
     /// </summary>
-    /// <param name="text">Text objekt</param>
+    /// <param name="text">The text.</param>
     public Text (Text text)
     {
         Contents = text.Contents;
     }
 
     /// <summary>
-    /// Lägger till en rad i listan
+    /// Adds the row.
     /// </summary>
-    /// <param name="text">En sträng med text</param>
+    /// <param name="text">The text.</param>
     public void AddRow(string text)
     {
         Contents.Add(text);
     }
 
+    /// <summary>
+    /// Inserts a row the specified position.
+    /// </summary>
+    /// <param name="pos">The position.</param>
+    /// <param name="text">The text.</param>
     public void Insert(int pos, string text)
     {
         if (DoesRowExist(pos))
             Contents.Insert(pos, text);
     }
 
+    /// <summary>
+    /// Deletes the specified row of text.
+    /// </summary>
+    /// <param name="text">The text.</param>
     public void Delete(string text)
     {
         int pos = Contents.FindIndex(r=>r.Contains(text));
         Delete(pos);
     }
 
+    /// <summary>
+    /// Deletes the row in the specified position.
+    /// </summary>
+    /// <param name="pos">The position.</param>
     public void Delete(int pos)
     {
         if (DoesRowExist(pos))
             Contents.RemoveAt(pos);
     }
 
+    /// <summary>
+    /// Replaces the text in the specified position.
+    /// </summary>
+    /// <param name="pos">The position.</param>
+    /// <param name="text">The text.</param>
     public void Replace(int pos, string text)
     {
         if (DoesRowExist(pos))
             Contents[ pos ] = text;
     }
 
+    /// <summary>
+    /// Checks if the row exist.
+    /// </summary>
+    /// <param name="pos">The position.</param>
+    /// <returns></returns>
     public bool DoesRowExist (int pos) => pos >= 0 && pos < Contents.Count;
 }
