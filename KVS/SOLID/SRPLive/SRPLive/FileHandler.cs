@@ -11,14 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class FileHandler
+public class FileHandler : IFileHandler
 {
     public string Filename { get; set; }
     public string Load () => File.Exists(Filename)  // if
             ? File.ReadAllText(Filename) // true 
             : ""; // else
 
-    public void Save(string text)
+    public void Save (string text)
     {
         try
         {
