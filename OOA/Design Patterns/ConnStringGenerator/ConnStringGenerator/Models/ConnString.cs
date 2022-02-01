@@ -7,8 +7,9 @@ namespace ConnStringGenerator.Models
 {
    internal class ConnString
     {
-        public string Server { get; set; }
-        public string Database { get; set; }
-
+        public string Server { get; set; } = "127.0.0.1";
+        public string Database { get; set; } = "MyDatabase";
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

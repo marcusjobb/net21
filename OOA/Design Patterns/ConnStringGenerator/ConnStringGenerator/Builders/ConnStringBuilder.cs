@@ -7,26 +7,45 @@ namespace ConnStringGenerator.Builders
 {
     using ConnStringGenerator.Models;
 
-    internal class ConnStringBuilder
+internal class ConnStringBuilder
+{
+    public string Server { get; set; } = "127.0.0.1";
+    public string Database { get; set; } = "MyDatabase";
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public ConnStringBuilder SetServer (string server)
     {
-        public ConnString ConnectionString { get; set; } = new ConnString();
-        public ConnStringBuilder SetServer(string server)
-        {
-            if (server == null) return this;
-            ConnectionString.Server = server;
-            return this;
-        }
-        public ConnStringBuilder SetDatabase(string database)
-        {
-            if (database == null) return this;
-            ConnectionString.Database = database;
-            return this;
-        }
-
-        public string Build()
-        {
-            return $"Server={ConnectionString.Server}\\v11.0;Integrated Security=true;Database={ConnectionString.Database}";
-        }
-
+        if (server != null)
+            Server = server;
+        return this;
     }
+    public ConnStringBuilder SetDatabase (string database)
+    {
+        if (database != null)
+            Database = database;
+        return this;
+    }
+
+    public ConnStringBuilder SetUsername (string username)
+    {
+        if (username != null)
+            Username = username;
+        return this;
+    }
+
+    public ConnStringBuilder SetPassword (string password)
+    {
+        if (password != null)
+            Password= password;
+        return this;
+    }
+
+    public string Build ()
+    {
+        if (Username == null)
+            return $"Server={Server}\\v11.0;Integrated Security=true;Database={Database}";
+        else
+            return $"Server={Server};Database={Database};User Id={Username};Password={Password};";
+    }
+}
 }

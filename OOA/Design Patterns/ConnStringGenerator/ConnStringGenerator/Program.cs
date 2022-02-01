@@ -10,6 +10,5 @@ var conn = con.
               Build();
 Console.WriteLine(conn);
 
-con.SetDatabase("People");
-con.SetServer("(LocalDB)");
+con.SetUsername("Marcus").SetPassword("qwerty123");
 Console.WriteLine(con.Build());

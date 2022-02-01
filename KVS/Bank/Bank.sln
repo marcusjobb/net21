@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{12DDAC40-E14B-4676-9B75-B79C55AEB73F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSpecFlow", "BankSpecFlow\BankSpecFlow.csproj", "{7D8CADF6-5051-4AAF-9F23-90C0B6E63D4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12DDAC40-E14B-4676-9B75-B79C55AEB73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DDAC40-E14B-4676-9B75-B79C55AEB73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DDAC40-E14B-4676-9B75-B79C55AEB73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DDAC40-E14B-4676-9B75-B79C55AEB73F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8CADF6-5051-4AAF-9F23-90C0B6E63D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8CADF6-5051-4AAF-9F23-90C0B6E63D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8CADF6-5051-4AAF-9F23-90C0B6E63D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8CADF6-5051-4AAF-9F23-90C0B6E63D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83D6502C-BD03-472C-AC7A-23065E694DF0}
+	EndGlobalSection
+EndGlobal
