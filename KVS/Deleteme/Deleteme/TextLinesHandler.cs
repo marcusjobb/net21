@@ -1,5 +1,6 @@
 ﻿namespace Deleteme;
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,15 @@ public class TextLinesHandler : IEnumerable
         }
     }
 
+    public string After(int index)
+    {
+        return rows[index + 1];
+    }
+    public string Before(int index)
+    {
+        return rows[index - 1];
+    }
+
     // implement ienumerable
     public IEnumerator<string> GetEnumerator()
     {
@@ -43,87 +53,62 @@ public class TextLinesHandler : IEnumerable
 
     public int IndexOf(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindIndex(r=>r.Trim()==text);
-        return rows.IndexOf(text);
+        return trimFirst ? rows.FindIndex(r => r.Trim() == text) : rows.IndexOf(text);
     }
 
     public int IndexOfContaining(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindIndex(r => r.Trim().Contains(text));
-        return rows.FindIndex(r => r.Contains(text));
+        return trimFirst ? rows.FindIndex(r => r.Trim().Contains(text)) : rows.FindIndex(r => r.Contains(text));
     }
 
     public int IndexOfEndsWith(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindIndex(r => r.Trim().StartsWith(text));
-        return rows.FindIndex(r => r.StartsWith(text));
+        return trimFirst ? rows.FindIndex(r => r.Trim().StartsWith(text)) : rows.FindIndex(r => r.StartsWith(text));
     }
 
     public int IndexOfLast(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindLastIndex(r=>r.Trim()==text);
-        return rows.LastIndexOf(text);
+        return trimFirst ? rows.FindLastIndex(r => r.Trim() == text) : rows.LastIndexOf(text);
     }
 
     public int IndexOfLastContaining(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindLastIndex(r => r.Trim().Contains(text));
-        return rows.FindLastIndex(r => r.Contains(text));
+        return trimFirst ? rows.FindLastIndex(r => r.Trim().Contains(text)) : rows.FindLastIndex(r => r.Contains(text));
     }
 
     public int IndexOfLastEndsWith(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindLastIndex(r => r.Trim().StartsWith(text));
-        return rows.FindLastIndex(r => r.StartsWith(text));
+        return trimFirst ? rows.FindLastIndex(r => r.Trim().StartsWith(text)) : rows.FindLastIndex(r => r.StartsWith(text));
     }
 
     public int IndexOfLastStartsWith(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindLastIndex(r => r.Trim().StartsWith(text));
-        else
-            return rows.FindLastIndex(r => r.StartsWith(text));
+        return trimFirst ? rows.FindLastIndex(r => r.Trim().StartsWith(text)) : rows.FindLastIndex(r => r.StartsWith(text));
     }
 
     public int IndexOfStartsWith(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return rows.FindIndex(r => r.Trim().StartsWith(text));
-        return rows.FindIndex(r => r.StartsWith(text));
+        return trimFirst ? rows.FindIndex(r => r.Trim().StartsWith(text)) : rows.FindIndex(r => r.StartsWith(text));
     }
 
     public int LastIndexOf(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return IndexOfLast(text, trimFirst);
-        return IndexOfLast(text);
+        return trimFirst ? IndexOfLast(text, trimFirst) : IndexOfLast(text);
     }
 
     public int LastIndexOfContaining(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return IndexOfLastContaining(text, trimFirst);
-        return IndexOfLastContaining(text);
+        return trimFirst ? IndexOfLastContaining(text, trimFirst) : IndexOfLastContaining(text);
     }
 
     public int LastIndexOfEndsWith(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return IndexOfLastEndsWith(text, trimFirst);
-        return IndexOfLastEndsWith(text);
+        return trimFirst ? IndexOfLastEndsWith(text, trimFirst) : IndexOfLastEndsWith(text);
     }
 
     public int LastIndexOfStartsWith(string text, bool trimFirst = false)
     {
-        if(trimFirst)
-            return IndexOfLastStartsWith(text, trimFirst);
-        return IndexOfLastStartsWith(text);
+        return trimFirst ? IndexOfLastStartsWith(text, trimFirst) : IndexOfLastStartsWith(text);
     }
 
     public TextLinesHandler Read(string filename)
@@ -138,5 +123,11 @@ public class TextLinesHandler : IEnumerable
         if(IsDirty) File.WriteAllLines(filename, rows);
         IsDirty = false;
         return this;
+    }
+
+    internal void Refresh()
+    {
+        var str = string.Join(Environment.NewLine, rows);
+        rows = new List<string>(str.Split(Environment.NewLine));
     }
 }

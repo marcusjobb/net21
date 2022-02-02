@@ -4,15 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
 
 public class Shitty
 {
-    public int number { get; set; }
-    public string Name { get; set; }
-    public Guid id { get; set; }
-    public bool this_is_sparta { get; set; }
-    public Shitty this_is_shit { get; set; }
-    public Shittiast no_this_is_pure_shit { get; set; }
+    [BsonElement("number")]
+    public int Number { get; set; }
+    public string Name { get; set; } = string.Empty;
+    [BsonElement("id")]
+    [BsonId]
+    public Guid Id { get; set; } = Guid.NewGuid();
+    [BsonElement("this_is_sparta")]
+    public bool ThisIsSparta { get; set; }
+    [BsonElement("this_is_shit")]
+    public Shitty ThisIsShit { get; set; } = new();
+    [BsonElement("no_this_is_pure_shit")]
+    public Shittiast NoThisIsPureShit { get; set; } = new();
 }
 
 public class Shittiast
