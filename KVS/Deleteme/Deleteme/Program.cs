@@ -1,242 +1,184 @@
-﻿using System;
-using System.Globalization;
-using System.ComponentModel.DataAnnotations;
+﻿using System.IO;
 
-using MongoDB.Driver;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using HtmlAgilityPack;
-using System.Xml;
+var cl = new QuickAndDirty();
+cl.FixPropertiesDefault(@"C:\Users\marcu\source\MMPro\DailyNotes\");
+cl.FixJsonPropertiesName(@"C:\Users\marcu\source\MMPro\DailyNotes\");
+cl.MongoPatch(@"C:\Users\marcu\source\MMPro\DailyNotes\");
 
-Aftonbladet.ArticleAlt("https://www.aftonbladet.se/nojesbladet/a/1OePbW/melanie-lynskey-hanas-for-sin-vikt-i-yellowjackets");
-//var kitten = new KittenBuilder("Bastimisse").SetColor("Black", "Brown", "Black")
-//    .AddKid(new KittenBuilder("Bastimissa").SetColor("Black", "Black", "BlackWhite").Build()).Save().Build();
-
-//var cat = new KittenBuilder("Atreyo").Save().Build();
-//Console.WriteLine($"{cat.Name}, {cat.Color.EyesColor} {cat.Color.FurColor} {cat.Color.TailColor}");
-//cat = new KittenBuilder("Bastimisse").Build();
-//Console.WriteLine($"{cat.Name}, {cat.Color.EyesColor} {cat.Color.FurColor} {cat.Color.TailColor}");
-//cat = new KittenBuilder("Bastimissa").Build();
-//Console.WriteLine($"{cat.Name}, {cat.Color.EyesColor} {cat.Color.FurColor} {cat.Color.TailColor}");
-
-// Create a builder class for Kittens
-public class KittenBuilder
+internal class QuickAndDirty
 {
-    Kitten myKitten = new();
-    KittenCRUD crud = new();
-    public KittenBuilder()
+    private const int access = 0;
+    private const int vartype = 1;
+    private const int name = 2;
+    public void MongoPatch(string path)
     {
-
-    }
-    public KittenBuilder(string name)
-    {
-        var kitten = crud.Get(name);
-
-        if(kitten == null)
+        string addUsing = "using MongoDB.Bson.Serialization.Attributes;";
+        string tag = "[BsonId]";
+        foreach(var filename in Directory.EnumerateFiles(path, "*.cs", SearchOption.AllDirectories))
         {
-            myKitten = new Kitten();
-            myKitten.Name = name;
+            PatchCode(filename, addUsing, tag, 0);
+        }
+        TodoSave();
+    }
+
+    private void PatchCode(string filename, string addUsing, string tag, int cmd)
+    {
+        if(filename.Contains("\\bin\\") || filename.Contains("\\obj\\")) return;
+        var data = File.ReadAllLines(filename).ToList();
+        var nsRow = -1;
+        var useAnotationsRow = -1;
+        var hasAnnotations = false;
+        var lastRow = "";
+        for(var i = 0; i < data.Count; i++)
+        {
+            data[i] = data[i].TrimEnd();
+            if(data[i].Trim().StartsWith("namespace ")) nsRow = i;
+            if(data[i].Trim().StartsWith(addUsing)) useAnotationsRow = i;
+            if(cmd == 0)
+                AddIdTag(tag, data, lastRow, i);
+            if(cmd == 1)
+                FixLcaseProperties(tag, data, lastRow, i);
+
+            if(data[i].Trim().Contains(tag)) hasAnnotations = true;
+            lastRow = data[i].Trim();
+        }
+
+        if(hasAnnotations && useAnotationsRow < 0)
+        {
+            if(nsRow < 0) nsRow = 0;
+            nsRow++;
+            data.Insert(nsRow, addUsing);
+        }
+        File.WriteAllLines(filename, data);
+    }
+
+    private static void AddIdTag(string tag, List<string> data, string lastRow, int i)
+    {
+        if((data[i].Contains("{ get; }") || data[i].Contains("{ get; set; }")) && !data[i].Trim().StartsWith("//"))
+        {
+            var tmp = data[i].Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            if(string.Equals(tmp[name], "id", StringComparison.CurrentCultureIgnoreCase) && tmp[vartype] == "Guid" && lastRow != tag)
+            {
+                data[i] = $"    {tag}\r\n{data[i]}";
+            }
+        }
+    }
+
+    public void FixJsonPropertiesName(string path)
+    {
+        string addUsing = "using MongoDB.Bson.Serialization.Attributes;";
+        string tag = "BsonElement(";
+        foreach(var filename in Directory.EnumerateFiles(path, "*.cs", SearchOption.AllDirectories))
+        {
+            PatchCode(filename, addUsing, tag, 0);
+        }
+        TodoSave();
+    }
+
+    private void FixLcaseProperties(string tag, List<string> data, string lastRow, int i)
+    {
+        if(data[i].Contains("{ get; }") || data[i].Contains("{ get; set; }") && !data[i].Trim().StartsWith("//"))
+        {
+            var tmp = data[i].Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            if(tmp[name][0] == tmp[name].ToLower()[0] && !lastRow.StartsWith(tag))
+            {
+                data[i] = $"    {tag}\"{tmp[name]}\")]\r\n" + data[i].Replace("_", "").Replace(tmp[name], ProperCase(tmp[name]));
+            }
+        }
+    }
+
+    private string ProperCase(string name)
+    {
+        return name.Substring(0, 1).ToUpper() + name.Substring(1);
+    }
+
+    public void FixPropertiesDefault(string path)
+    {
+        foreach(var filename in Directory.EnumerateFiles(path, "*.cs", SearchOption.AllDirectories))
+        {
+            if(filename.Contains("\\bin\\") || filename.Contains("\\obj\\")) continue;
+            var data = File.ReadAllLines(filename);
+
+            for(var i = 0; i < data.Length; i++)
+            {
+                data[i] = data[i].TrimEnd();
+                if(!data[i].Trim().StartsWith("//"))
+                {
+                    if(data[i].Contains("{ get; }") || data[i].Contains("{ get; set; }") || data[i].Contains("{ get; private set; }") && !data[i].Contains("} = "))
+                    {
+                        var tmp = data[i].Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                        var def = GetDefaultValue(tmp[vartype]);
+                        if(def.Length != 0) data[i] += $" = {def};";
+                    }
+                }
+            }
+            File.WriteAllLines(filename, data);
+        }
+        TodoSave();
+    }
+    private string GetDefaultValue(string vartype)
+    {
+        var varCheck = vartype.TrimEnd('?');
+        var firstLetter = vartype[..2];
+        if(varCheck.EndsWith("[]"))
+        {
+            return $"Array.Empty<{varCheck.Substring(0, varCheck.Length - 2)}>()";
+        }
+        else if(firstLetter == firstLetter.ToUpperInvariant() && firstLetter.StartsWith('I'))
+        {
+            return TodoFix(varCheck, $"new {varCheck[1..]}()");
+        }
+        else if(vartype.EndsWith('?'))
+        {
+            return varCheck switch
+            {
+                "bool" => "false",
+                "decimal" => "0m",
+                "double" => "0b",
+                "float" => "0f",
+                "Guid" => "Guid.NewGuid();",
+                "int" or "byte" or "sbyte" or "uint" or "nint" or "nunint" or "long" or "ulong" or "short" or "ushort" => "0",
+                "ObjectId" => "= ObjectId.GenerateNewId()",
+                "string" => "string.Empty",
+                "DateTime" => "default",
+                _ => TodoFix(varCheck,$"new()")
+            };
         }
         else
         {
-            myKitten = kitten;
+            return varCheck switch
+            {
+                "bool" => "",
+                "Guid" => "Guid.NewGuid()",
+                "ObjectId" => "= ObjectId.GenerateNewId()",
+                "string" => "string.Empty",
+                "DateTime" => "default",
+                "int" or "byte" or "sbyte" or "uint" or "nint" or "nunint" or "long" or "ulong" or "short" or "ushort" => "",
+                "decimal" => "",
+                "double" => "",
+                "float" => "",
+                _ => TodoFix(varCheck, $"new()")
+            };
         }
     }
-    public KittenBuilder(Guid id)
-    {
-        var kitten = crud.Get(id);
 
-        if(kitten == null)
+    private static List<string> TodoList=new List<string>();
+    private static void TodoSave() => File.WriteAllLines("Todo.txt", TodoList);
+    private static string TodoFix(string varCheck, string retVal)
+    {
+        if (TodoList==null)
         {
-            myKitten = new Kitten();
-            myKitten.Id = id;
-        }
-        else
-        {
-            myKitten = kitten;
-        }
-    }
-
-    public KittenBuilder SetName(string name)
-    {
-        myKitten.Name = name;
-        return this;
-    }
-
-    public KittenBuilder SetColor(string fur, string eyes)
-    {
-        myKitten.Color.FurColor = fur;
-        myKitten.Color.EyesColor = eyes;
-        myKitten.Color.TailColor = fur;
-        return this;
-    }
-    public KittenBuilder SetColor(string fur, string eyes, string tail)
-    {
-        myKitten.Color.FurColor = fur;
-        myKitten.Color.EyesColor = eyes;
-        myKitten.Color.TailColor = tail;
-        return this;
-    }
-
-    public KittenBuilder AddKid(Kitten kid)
-    {
-        myKitten.Kids.Add(kid);
-        return this;
-    }
-
-    public Kitten Build()
-    {
-        return myKitten;
-    }
-
-    public KittenBuilder Save()
-    {
-        crud.Save(myKitten);
-        return this;
-    }
-
-
-}
-
-public class Kitten
-
-{
-    public Guid Id { get; set; } = Guid.NewGuid();
-    public string Name { get; set; } = "";
-    public Guid[] KidsId { get; set; }
-    public Guid ColorId { get; set; }
-    [BsonIgnore]
-    public List<Kitten> Kids { get; set; } = new();
-    [BsonIgnore]
-    public Color Color { get; set; } = new();
-}
-
-public class Color
-{
-    public Guid Id { get; set; } = Guid.NewGuid();
-    public string FurColor { get; set; }
-    public string EyesColor { get; set; }
-    public string TailColor { get; set; }
-}
-
-// create a CRUD class for Kittens on MongoDB
-public class KittenCRUD
-{
-    // Define database connection
-    private readonly MongoClient _client;
-    private readonly IMongoDatabase _database;
-    private readonly IMongoCollection<Kitten> _colKitten;
-
-    public KittenCRUD()
-    {
-        _client = new MongoClient("mongodb://localhost:27017");
-        _database = _client.GetDatabase("Kittens");
-        _colKitten = _database.GetCollection<Kitten>("Kittens");
-        _colKitten = _database.GetCollection<Kitten>("Kittens");
-    }
-    public static Kitten ToKitten(Kitten kitten)
-    {
-        return new Kitten()
-        {
-            Name = kitten.Name,
-            Id = kitten.Id,
-            ColorId = kitten.Color.Id,
-            KidsId = kitten.Kids.Select(k => k.Id).ToArray()
-        };
-    }
-
-    public Kitten Get(Guid id)
-    {
-        var kitten = _colKitten.Find(k => k.Id == id).FirstOrDefault();
-        if(kitten == null)
-        {
-            return null;
-        }
-        return KittyTransformer(kitten);
-    }
-    public Kitten Get(string name)
-    {
-        var kitten = _colKitten.Find(c => c.Name == name).FirstOrDefault();
-        return KittyTransformer(kitten);
-    }
-
-    private Kitten KittyTransformer(Kitten kitten)
-    {
-        if(kitten == null)
-            return null;
-        var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == kitten.ColorId).FirstOrDefault();
-        var kidsId = kitten.KidsId.ToArray();
-        var kids = _colKitten.AsQueryable<Kitten>().Where(c => kidsId.Contains(c.Id)).ToList();
-        kitten.Color = color;
-        kitten.Kids = kids;
-        return kitten;
-    }
-
-    public void Save(Kitten kitten)
-    {
-        var Kitten = ToKitten(kitten);
-        var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == Kitten.ColorId).FirstOrDefault();
-        if (color==null)
-            color = _database.GetCollection<Color>("Colors").Find(c => c.EyesColor == kitten.Color.EyesColor && c.FurColor == kitten.Color.FurColor && c.TailColor== kitten.Color.TailColor).FirstOrDefault();
-        if(color == null)
-            _database.GetCollection<Color>("Colors").InsertOne(kitten.Color);
-        else
-            _database.GetCollection<Color>("Colors").ReplaceOne(c => c.Id == Kitten.ColorId, kitten.Color);
-
-        var kidCollection = _database.GetCollection<Kitten>("Kittens");
-        foreach(var kid in kitten.Kids)
-        {
-            Save(kid);
+            if(File.Exists("Todo.txt"))
+                TodoList = File.ReadAllLines("Todo.txt").ToList();
+            else
+                TodoList = new List<string>();
         }
 
-        var kit = _colKitten.Find(c => c.Id == Kitten.Id).FirstOrDefault();
-        if(kit == null)
-            kit = _colKitten.Find(c => c.Name == kitten.Name).FirstOrDefault();
-        if(kit == null)
-            _colKitten.InsertOne(Kitten);
-        else
-            _colKitten.ReplaceOne(c => c.Id == Kitten.Id, Kitten);
-    }
-}
+        if (TodoList.IndexOf(varCheck)<0)
+        {
+            TodoList.Add(varCheck);
+        }
 
-// create a class that downloads an article from Aftonbladet.se
-// and saves it to MongoDB as a document in the database "News"
-
-public class Aftonbladet
-{
-    public static void ArticleAlt(string url)
-    {
-        HtmlWeb web = new HtmlWeb();
-        HtmlAgilityPack.HtmlDocument doc = web.Load(url);
-        string str = doc.DocumentNode.InnerText;
-        var pos = str.IndexOf("Tipsa AftonbladetOm Aftonbladet");
-        if(pos > 0)
-            str = str.Substring(pos+20);
-        pos = str.LastIndexOf("Publisert:Publicerad:");
-        if(pos > 0)
-            str = str.Substring(0, pos);
-        Console.WriteLine(str.Trim());
-    }
-    public static void Article(string url)
-    {
-        var client = new MongoClient("mongodb://localhost:27017");
-        var database = client.GetDatabase("News");
-        var collection = database.GetCollection<BsonDocument>("Aftonbladet");
-
-        var web = new HtmlWeb();
-        var doc = web.Load(url);
-
-        var test = doc.DocumentNode.SelectNodes("//div[@class='observer-placeholder']");
-
-
-        var article = new BsonDocument();
-        article["Title"] = doc.DocumentNode.SelectSingleNode("//title").InnerText;
-        article["Content"] = doc.DocumentNode.SelectSingleNode("//div[@class='article-body']").InnerText;
-        article["Date"] = doc.DocumentNode.SelectSingleNode("//time[@class='article-date']").InnerText;
-        article["Author"] = doc.DocumentNode.SelectSingleNode("//span[@class='article-author']").InnerText;
-        article["Url"] = url;
-        article["Id"] = Guid.NewGuid();
-
-        collection.InsertOne(article);
+        return retVal;
     }
 }
