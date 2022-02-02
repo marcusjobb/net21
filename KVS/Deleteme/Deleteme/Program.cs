@@ -1,21 +1,25 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.ComponentModel.DataAnnotations;
 
 using MongoDB.Driver;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using HtmlAgilityPack;
+using System.Xml;
 
-var kitten = new KittenBuilder("Bastimisse")
-    .SetColor("Black", "Brown", "Black")
-    .AddKid(new KittenBuilder("Bastimissa").SetColor("Black", "Black", "BlackWhite").Build());
-kitten.Save();
+Aftonbladet.ArticleAlt("https://www.aftonbladet.se/nojesbladet/a/1OePbW/melanie-lynskey-hanas-for-sin-vikt-i-yellowjackets");
+//var kitten = new KittenBuilder("Bastimisse").SetColor("Black", "Brown", "Black")
+//    .AddKid(new KittenBuilder("Bastimissa").SetColor("Black", "Black", "BlackWhite").Build()).Save().Build();
 
-kitten = new KittenBuilder("Atreyo").SetColor("Striped grey","green");
-kitten.Save();
-
-Console.WriteLine(kitten.Build().Name);
+//var cat = new KittenBuilder("Atreyo").Save().Build();
+//Console.WriteLine($"{cat.Name}, {cat.Color.EyesColor} {cat.Color.FurColor} {cat.Color.TailColor}");
+//cat = new KittenBuilder("Bastimisse").Build();
+//Console.WriteLine($"{cat.Name}, {cat.Color.EyesColor} {cat.Color.FurColor} {cat.Color.TailColor}");
+//cat = new KittenBuilder("Bastimissa").Build();
+//Console.WriteLine($"{cat.Name}, {cat.Color.EyesColor} {cat.Color.FurColor} {cat.Color.TailColor}");
 
 // Create a builder class for Kittens
-
 public class KittenBuilder
 {
     Kitten myKitten = new();
@@ -94,18 +98,16 @@ public class KittenBuilder
 
 }
 
-public class KittenDB 
+public class Kitten
+
 {
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Name { get; set; } = "";
     public Guid[] KidsId { get; set; }
     public Guid ColorId { get; set; }
-}
-public class Kitten
-{
-    public Guid Id { get; set; } = Guid.NewGuid();
-    public string Name { get; set; } = "";
+    [BsonIgnore]
     public List<Kitten> Kids { get; set; } = new();
+    [BsonIgnore]
     public Color Color { get; set; } = new();
 }
 
@@ -123,19 +125,18 @@ public class KittenCRUD
     // Define database connection
     private readonly MongoClient _client;
     private readonly IMongoDatabase _database;
-    private readonly IMongoCollection<KittenDB> _colKittenDB;
     private readonly IMongoCollection<Kitten> _colKitten;
 
     public KittenCRUD()
     {
         _client = new MongoClient("mongodb://localhost:27017");
         _database = _client.GetDatabase("Kittens");
-        _colKittenDB = _database.GetCollection<KittenDB>("Kittens");
+        _colKitten = _database.GetCollection<Kitten>("Kittens");
         _colKitten = _database.GetCollection<Kitten>("Kittens");
     }
-    public static KittenDB ToKittenDB(Kitten kitten)
+    public static Kitten ToKitten(Kitten kitten)
     {
-        return new KittenDB()
+        return new Kitten()
         {
             Name = kitten.Name,
             Id = kitten.Id,
@@ -146,7 +147,7 @@ public class KittenCRUD
 
     public Kitten Get(Guid id)
     {
-        var kitten = _colKittenDB.Find(k => k.Id == id).FirstOrDefault();
+        var kitten = _colKitten.Find(k => k.Id == id).FirstOrDefault();
         if(kitten == null)
         {
             return null;
@@ -155,49 +156,87 @@ public class KittenCRUD
     }
     public Kitten Get(string name)
     {
-        var kitten = _colKittenDB.Find(c => c.Name == name).FirstOrDefault();
+        var kitten = _colKitten.Find(c => c.Name == name).FirstOrDefault();
         return KittyTransformer(kitten);
     }
 
-    private Kitten KittyTransformer(KittenDB kitten)
+    private Kitten KittyTransformer(Kitten kitten)
     {
         if(kitten == null)
             return null;
         var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == kitten.ColorId).FirstOrDefault();
         var kidsId = kitten.KidsId.ToArray();
         var kids = _colKitten.AsQueryable<Kitten>().Where(c => kidsId.Contains(c.Id)).ToList();
-        return new Kitten()
-        {
-            Name = kitten.Name,
-            Id = kitten.Id,
-            Color = color,
-            //Kids = new List<Kitten>(kids)
-        };
+        kitten.Color = color;
+        kitten.Kids = kids;
+        return kitten;
     }
 
     public void Save(Kitten kitten)
     {
-        var kittenDb = ToKittenDB(kitten);
-        var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == kittenDb.ColorId).FirstOrDefault();
+        var Kitten = ToKitten(kitten);
+        var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == Kitten.ColorId).FirstOrDefault();
         if (color==null)
             color = _database.GetCollection<Color>("Colors").Find(c => c.EyesColor == kitten.Color.EyesColor && c.FurColor == kitten.Color.FurColor && c.TailColor== kitten.Color.TailColor).FirstOrDefault();
         if(color == null)
             _database.GetCollection<Color>("Colors").InsertOne(kitten.Color);
         else
-            _database.GetCollection<Color>("Colors").ReplaceOne(c => c.Id == kittenDb.ColorId, kitten.Color);
+            _database.GetCollection<Color>("Colors").ReplaceOne(c => c.Id == Kitten.ColorId, kitten.Color);
 
-        var kidCollection = _database.GetCollection<KittenDB>("Kittens");
+        var kidCollection = _database.GetCollection<Kitten>("Kittens");
         foreach(var kid in kitten.Kids)
         {
             Save(kid);
         }
 
-        var kit = _colKittenDB.Find(c => c.Id == kittenDb.Id).FirstOrDefault();
+        var kit = _colKitten.Find(c => c.Id == Kitten.Id).FirstOrDefault();
         if(kit == null)
-            kit = _colKittenDB.Find(c => c.Name == kitten.Name).FirstOrDefault();
+            kit = _colKitten.Find(c => c.Name == kitten.Name).FirstOrDefault();
         if(kit == null)
-            _colKittenDB.InsertOne(kittenDb);
+            _colKitten.InsertOne(Kitten);
         else
-            _colKittenDB.ReplaceOne(c => c.Id == kittenDb.Id, kittenDb);
+            _colKitten.ReplaceOne(c => c.Id == Kitten.Id, Kitten);
+    }
+}
+
+// create a class that downloads an article from Aftonbladet.se
+// and saves it to MongoDB as a document in the database "News"
+
+public class Aftonbladet
+{
+    public static void ArticleAlt(string url)
+    {
+        HtmlWeb web = new HtmlWeb();
+        HtmlAgilityPack.HtmlDocument doc = web.Load(url);
+        string str = doc.DocumentNode.InnerText;
+        var pos = str.IndexOf("Tipsa AftonbladetOm Aftonbladet");
+        if(pos > 0)
+            str = str.Substring(pos+20);
+        pos = str.LastIndexOf("Publisert:Publicerad:");
+        if(pos > 0)
+            str = str.Substring(0, pos);
+        Console.WriteLine(str.Trim());
+    }
+    public static void Article(string url)
+    {
+        var client = new MongoClient("mongodb://localhost:27017");
+        var database = client.GetDatabase("News");
+        var collection = database.GetCollection<BsonDocument>("Aftonbladet");
+
+        var web = new HtmlWeb();
+        var doc = web.Load(url);
+
+        var test = doc.DocumentNode.SelectNodes("//div[@class='observer-placeholder']");
+
+
+        var article = new BsonDocument();
+        article["Title"] = doc.DocumentNode.SelectSingleNode("//title").InnerText;
+        article["Content"] = doc.DocumentNode.SelectSingleNode("//div[@class='article-body']").InnerText;
+        article["Date"] = doc.DocumentNode.SelectSingleNode("//time[@class='article-date']").InnerText;
+        article["Author"] = doc.DocumentNode.SelectSingleNode("//span[@class='article-author']").InnerText;
+        article["Url"] = url;
+        article["Id"] = Guid.NewGuid();
+
+        collection.InsertOne(article);
     }
 }
