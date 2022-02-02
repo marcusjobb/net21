@@ -1,4 +1,4 @@
-﻿namespace Deleteme;
+namespace Deleteme;
 
 using MongoDB.Driver;
 // create a CRUD class for Kittens on MongoDB
@@ -27,22 +27,18 @@ public class KittenCRUD
         };
     }
 
-    public Kitten Get(Guid id)
+    public Kitten? Get(Guid id)
     {
         var kitten = _colKitten.Find(k => k.Id == id).FirstOrDefault();
-        if(kitten == null)
-        {
-            return null;
-        }
-        return KittyTransformer(kitten);
+        return kitten == null ? null : KittyTransformer(kitten);
     }
-    public Kitten Get(string name)
+    public Kitten? Get(string name)
     {
         var kitten = _colKitten.Find(c => c.Name == name).FirstOrDefault();
         return KittyTransformer(kitten);
     }
 
-    private Kitten KittyTransformer(Kitten kitten)
+    private Kitten? KittyTransformer(Kitten kitten)
     {
         if(kitten == null)
             return null;
@@ -57,13 +53,11 @@ public class KittenCRUD
     public void Save(Kitten kitten)
     {
         var Kitten = ToKitten(kitten);
-        var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == Kitten.ColorId).FirstOrDefault();
-        if (color==null)
-            color = _database.GetCollection<Color>("Colors").Find(c => c.EyesColor == kitten.Color.EyesColor && c.FurColor == kitten.Color.FurColor && c.TailColor== kitten.Color.TailColor).FirstOrDefault();
+        var color = _database.GetCollection<Color>("Colors").Find(c => c.Id == Kitten.ColorId).FirstOrDefault() ?? _database.GetCollection<Color>("Colors").Find(c => c.EyesColor == kitten.Color.EyesColor && c.FurColor == kitten.Color.FurColor && c.TailColor == kitten.Color.TailColor).FirstOrDefault();
         if(color == null)
             _database.GetCollection<Color>("Colors").InsertOne(kitten.Color);
         else
-            _database.GetCollection<Color>("Colors").ReplaceOne(c => c.Id == Kitten.ColorId, kitten.Color);
+            _ = _database.GetCollection<Color>("Colors").ReplaceOne(c => c.Id == Kitten.ColorId, kitten.Color);
 
         var kidCollection = _database.GetCollection<Kitten>("Kittens");
         foreach(var kid in kitten.Kids)
@@ -71,12 +65,10 @@ public class KittenCRUD
             Save(kid);
         }
 
-        var kit = _colKitten.Find(c => c.Id == Kitten.Id).FirstOrDefault();
-        if(kit == null)
-            kit = _colKitten.Find(c => c.Name == kitten.Name).FirstOrDefault();
+        var kit = _colKitten.Find(c => c.Id == Kitten.Id).FirstOrDefault() ?? _colKitten.Find(c => c.Name == kitten.Name).FirstOrDefault();
         if(kit == null)
             _colKitten.InsertOne(Kitten);
         else
-            _colKitten.ReplaceOne(c => c.Id == Kitten.Id, Kitten);
+            _ = _colKitten.ReplaceOne(c => c.Id == Kitten.Id, Kitten);
     }
 }

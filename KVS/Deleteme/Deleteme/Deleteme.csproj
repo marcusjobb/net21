@@ -8,22 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Todo.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Todo.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Todo.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.40" />
     <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
   </ItemGroup>

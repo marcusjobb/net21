@@ -1,4 +1,4 @@
-﻿namespace Deleteme;
+namespace Deleteme;
 
 //var kitten = new KittenBuilder("Bastimisse").SetColor("Black", "Brown", "Black")
 //    .AddKid(new KittenBuilder("Bastimissa").SetColor("Black", "Black", "BlackWhite").Build()).Save().Build();
@@ -13,39 +13,28 @@
 // Create a builder class for Kittens
 public class KittenBuilder
 {
-    Kitten myKitten = new();
-    KittenCRUD crud = new();
+    private readonly Kitten myKitten = new();
+    private readonly KittenCRUD crud = new();
     public KittenBuilder()
     {
-
     }
     public KittenBuilder(string name)
     {
         var kitten = crud.Get(name);
 
-        if(kitten == null)
+        myKitten = kitten ?? new Kitten
         {
-            myKitten = new Kitten();
-            myKitten.Name = name;
-        }
-        else
-        {
-            myKitten = kitten;
-        }
+            Name = name
+        };
     }
     public KittenBuilder(Guid id)
     {
         var kitten = crud.Get(id);
 
-        if(kitten == null)
+        myKitten = kitten ?? new Kitten
         {
-            myKitten = new Kitten();
-            myKitten.Id = id;
-        }
-        else
-        {
-            myKitten = kitten;
-        }
+            Id = id
+        };
     }
 
     public KittenBuilder SetName(string name)
@@ -85,6 +74,4 @@ public class KittenBuilder
         crud.Save(myKitten);
         return this;
     }
-
-
 }
