@@ -24,7 +24,7 @@ file_header_template = unset
 
 # this. and Me. preferences
 dotnet_style_qualification_for_event = false:suggestion
-dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_field = false
 dotnet_style_qualification_for_method = false:suggestion
 dotnet_style_qualification_for_property = false:suggestion
 

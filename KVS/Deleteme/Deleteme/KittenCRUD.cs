@@ -1,6 +1,7 @@
 namespace Deleteme;
 
 using MongoDB.Driver;
+
 // create a CRUD class for Kittens on MongoDB
 public class KittenCRUD
 {
@@ -8,7 +9,6 @@ public class KittenCRUD
     private readonly MongoClient _client;
     private readonly IMongoDatabase _database;
     private readonly IMongoCollection<Kitten> _colKitten;
-
     public KittenCRUD()
     {
         _client = new MongoClient("mongodb://localhost:27017");
@@ -16,17 +16,14 @@ public class KittenCRUD
         _colKitten = _database.GetCollection<Kitten>("Kittens");
         _colKitten = _database.GetCollection<Kitten>("Kittens");
     }
-    public static Kitten ToKitten(Kitten kitten)
-    {
-        return new Kitten()
-        {
-            Name = kitten.Name,
-            Id = kitten.Id,
-            ColorId = kitten.Color.Id,
-            KidsId = kitten.Kids.Select(k => k.Id).ToArray()
-        };
-    }
 
+    public static Kitten ToKitten(Kitten kitten) => new Kitten()
+    {
+        Name = kitten.Name,
+        Id = kitten.Id,
+        ColorId = kitten.Color.Id,
+        KidsId = kitten.Kids.Select(k => k.Id).ToArray()
+    };
     public Kitten? Get(Guid id)
     {
         var kitten = _colKitten.Find(k => k.Id == id).FirstOrDefault();
@@ -37,7 +34,6 @@ public class KittenCRUD
         var kitten = _colKitten.Find(c => c.Name == name).FirstOrDefault();
         return KittyTransformer(kitten);
     }
-
     private Kitten? KittyTransformer(Kitten kitten)
     {
         if(kitten == null)
@@ -49,7 +45,6 @@ public class KittenCRUD
         kitten.Kids = kids;
         return kitten;
     }
-
     public void Save(Kitten kitten)
     {
         var Kitten = ToKitten(kitten);
@@ -58,13 +53,11 @@ public class KittenCRUD
             _database.GetCollection<Color>("Colors").InsertOne(kitten.Color);
         else
             _ = _database.GetCollection<Color>("Colors").ReplaceOne(c => c.Id == Kitten.ColorId, kitten.Color);
-
         var kidCollection = _database.GetCollection<Kitten>("Kittens");
         foreach(var kid in kitten.Kids)
         {
             Save(kid);
         }
-
         var kit = _colKitten.Find(c => c.Id == Kitten.Id).FirstOrDefault() ?? _colKitten.Find(c => c.Name == kitten.Name).FirstOrDefault();
         if(kit == null)
             _colKitten.InsertOne(Kitten);
