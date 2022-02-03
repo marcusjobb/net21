@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting_Repetition_Live", "UnitTesting_Repetition_Live\UnitTesting_Repetition_Live.csproj", "{DCA3BAD7-3360-4AB2-99AA-8503D0D590E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting_Repetition_LiveTests", "UnitTesting_Repetition_LiveTests\UnitTesting_Repetition_LiveTests.csproj", "{EC143F9A-BC32-4A8D-B8C0-4563C6AB1EAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA3BAD7-3360-4AB2-99AA-8503D0D590E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA3BAD7-3360-4AB2-99AA-8503D0D590E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA3BAD7-3360-4AB2-99AA-8503D0D590E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA3BAD7-3360-4AB2-99AA-8503D0D590E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC143F9A-BC32-4A8D-B8C0-4563C6AB1EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC143F9A-BC32-4A8D-B8C0-4563C6AB1EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC143F9A-BC32-4A8D-B8C0-4563C6AB1EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC143F9A-BC32-4A8D-B8C0-4563C6AB1EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC96DECA-115E-4E6F-BA8C-DCAE212C3C48}
+	EndGlobalSection
+EndGlobal
