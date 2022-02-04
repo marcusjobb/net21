@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// <summary>
 /// Song definition
 /// </summary>
-internal class Song
+public class Song
 {
     /// <summary>Gets or sets the artist.</summary>
     /// <value>The artist.</value>

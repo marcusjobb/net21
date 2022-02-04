@@ -9,7 +9,7 @@ Console.WriteLine("Hello, unit testing!");
 //Console.WriteLine(poem.GetRow(row));
 
 var music = new Music();
-var song1 = music.FindSong("Yesterday");
+var song1 = music.FindSong("Barn av vår tid");
 if (song1 != null)
 {
     Console.WriteLine($"Searching for matching songs for {song1.Title}");

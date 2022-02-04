@@ -1,22 +1,18 @@
-﻿// -----------------------------------------------------------------------------------------------
-//  Music.cs by Marcus Medina, Copyright (C) 2021, Codic Education AB.
-//  Published under Apache License 2.0 (Apache-2.0) License
-// -----------------------------------------------------------------------------------------------
-
-namespace UnitTesting_Repetition_Live;
-
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UnitTesting_Repetition_Live;
 using UnitTesting_Repetition_Live.Models;
 
-public  class Music
+namespace UnitTesting_Repetition_Live.Tests
 {
-    // Constructor
-    public Music ()
+    [TestClass()]
+    public class MusicTests
     {
-        // Lägger in lite låtar i listan
-        Songs = new();
-            Songs.AddRange(
+        Music music=new Music();
+        [TestInitialize]
+        public void Init()
+        {
+            music.Songs = new();
+            music.Songs.AddRange(
             new Song[]
             {
                 new Song{Artist="Anna-Lena Löfgren", Title="Lyckliga gatan", Tags=new(){"Schlager"} },
@@ -25,7 +21,7 @@ public  class Music
                 new Song{Artist="Becky G", Title="Sin Pijama", Tags=new(){"Pop","Rock", "Latino" } },
                 new Song{Artist="Bruno Mars", Title="24K Magic", Tags=new(){"Pop","Funk","Disco","R&B" } },
                 new Song{Artist="Celine Dion", Title="My heart will go on", Tags=new(){"Romantic","loving" } },
-                new Song{Artist="Daddy Yankee", Title="Gasolina", Tags=new(){"Reaggeton","Rock", "Latino" } },   
+                new Song{Artist="Daddy Yankee", Title="Gasolina", Tags=new(){"Reaggeton","Rock", "Latino" } },
                 new Song{Artist="Elvis", Title ="Can't help falling in love", Tags=new(){"Romantic","Blues" } },
                 new Song{Artist="Evanescence", Title="Fallen", Tags=new(){"Romantic","Gothic Metal" } },
                 new Song{Artist="Factory", Title="Efter Plugget", Tags=new(){"Rock","80s" } },
@@ -50,61 +46,63 @@ public  class Music
                 new Song{Artist="Tommy Körberg", Title="Stad i ljus", Tags=new(){"schlager" } },
             }
         );
-    }
-
-    // Lista med sånger
-    public List<Song> Songs { get; set; }
-
-    // Söker matchande taggar mellan två låtar
-    // returnerar antal träffar
-    public double FindDistance (Song song1, Song song2)
-    {
-        if (song1 == null || song2 == null) return 0;
-        var distance = 0;
-        var tags1 = song1.Tags;
-        var tags2 = song2.Tags;
-        foreach (var tag1 in tags1)
-        {
-            foreach (var tag2 in tags2)
-            {
-                if (tag1 == tag2)
-                {
-                    distance++;
-                }
-            }
         }
-        return distance;
-    }
-
-    public Song? FindSong (string title)
-    {
-        if (string.IsNullOrEmpty(title))
-            return null;
-        return Songs.FirstOrDefault(t => t.Title.ToLower().Contains(title.ToLower()));
-    }
-    public List<Song> FindArtist(string artist)
-    {
-        if (string.IsNullOrEmpty(artist))
-            return null;
-        return Songs.Where(t => t.Artist.ToLower().Contains(artist.ToLower())).ToList();
-    }
-
-    public List<MatchingSong> FindMatchingSongs (Song song)
-    {
-        if (song==null) return new List<MatchingSong>();
-        var match = new List<MatchingSong>();
-        foreach (var comp in Songs)
+        [TestMethod()]
+        public void FindDistanceTest ()
         {
-            if (comp != song)
-            {
-                // Jämför låtarna
-                var dist = FindDistance(comp, song);
-                // Spara matchning
-                if (dist>0)
-                    match.Add(new MatchingSong(song, comp, dist, song.Tags.Intersect(comp.Tags)));
-            }
+            // Arrange
+            var song1 = music.FindSong("Le Moribond");
+            var song2 = music.FindSong("Seasons in the Sun");
+            var expected = 2;
+            // Act
+
+            var dist = music.FindDistance(song1,song2);
+
+            // Assert
+            Assert.AreEqual(expected, dist);
         }
-        // Sortera listan med högsta värdet först
-        return match.OrderByDescending(s => s.Score).ToList();
+
+        [TestMethod()]
+        [DataRow("Le Moribond", null, 0)]
+        [DataRow(null,"Le Moribond", 0)]
+        [DataRow(null, null, 0)]
+        public void FindDistanceTest_null (string title1, string title2, int expected)
+        {
+            // Arrange
+            var song1 = music.FindSong(title1);
+            var song2 = music.FindSong(title2);
+            // Act
+
+            var dist = music.FindDistance(song1, song2);
+
+            // Assert
+            Assert.AreEqual(expected, dist);
+        }
+
+        [TestMethod()]
+        [DataRow("The Beatles", 2)]
+        [DataRow("Povel Ramel", 1)]
+        [DataRow("Marcus Medina", 0)]
+        public void FindArtistTest (string artist, int expected)
+        {
+            // Arrange
+
+            // Act
+            var found = music.FindArtist(artist);
+
+            // Assert
+            Assert.AreEqual(expected, found.Count);
+        }
+
+        [TestMethod()]
+        [DataRow("Barn av vår tid", 7)]
+        [DataRow(null, 0)]
+        public void FindMatchingSongsTest (string song, int expected)
+        {
+            var found = music.FindSong(song);
+            var match = music.FindMatchingSongs(found);
+
+            Assert.AreEqual(expected, match.Count);
+        }
     }
 }

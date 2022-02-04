@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// <summary>
 /// DTO for Matching songs
 /// </summary>
-internal class MatchingSong
+public class MatchingSong
 {
     /// <summary>Initializes a new instance of the <see cref="MatchingSong"/> class.</summary>
     /// <param name="song1">The song1.</param>
