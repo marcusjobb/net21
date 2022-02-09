@@ -18,9 +18,9 @@ namespace BankSpecFlow.StepDefinitions
         }
 
         [Given(@"a pizza \+ soda costs (.*) SEK")]
-        public void GivenAPizzaSodaCostsSEK (int amount)
+        public void GivenAPizzaSodaCostsSEK (decimal amount)
         {
-            PizzaPrice = amount;
+            PizzaPrice = (int)amount;
         }
 
         [When(@"money is transfered from checking account to card account")]

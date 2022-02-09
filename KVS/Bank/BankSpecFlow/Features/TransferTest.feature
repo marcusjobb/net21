@@ -12,7 +12,7 @@ Then: Kortkonto bör ha 120 kr
 @tag1
 Scenario: Buy a pizza
 	Given Checking account has 10532 SEK
-	And a pizza + soda costs 120 SEK
+	And a pizza + soda costs 120.5 SEK
 	And card account has less than 120
 	When money is transfered from checking account to card account
 	Then the difference should be transfered

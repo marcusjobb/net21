@@ -115,7 +115,7 @@ this.FeatureBackground();
  testRunner.Given("Checking account has 10532 SEK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 15
- testRunner.And("a pizza + soda costs 120 SEK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a pizza + soda costs 120.5 SEK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
  testRunner.And("card account has less than 120", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
