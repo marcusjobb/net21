@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JT_TDD_Inlämning1", "JT_TDD_Inlämning1\JT_TDD_Inlämning1.csproj", "{96584256-E6B7-4135-8EB4-18C47D43784D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JT_TDD_Inlämning1Tests", "JT_TDD_Inlämning1Tests\JT_TDD_Inlämning1Tests.csproj", "{65AEDA63-9A72-44F8-B463-1F8EAA184B42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96584256-E6B7-4135-8EB4-18C47D43784D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96584256-E6B7-4135-8EB4-18C47D43784D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96584256-E6B7-4135-8EB4-18C47D43784D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96584256-E6B7-4135-8EB4-18C47D43784D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65AEDA63-9A72-44F8-B463-1F8EAA184B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65AEDA63-9A72-44F8-B463-1F8EAA184B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65AEDA63-9A72-44F8-B463-1F8EAA184B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65AEDA63-9A72-44F8-B463-1F8EAA184B42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0196666-E9D4-469D-A14E-793D1F856E13}
+	EndGlobalSection
+EndGlobal
