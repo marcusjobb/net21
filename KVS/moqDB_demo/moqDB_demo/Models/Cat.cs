@@ -11,7 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Cat
+public interface IHasId
+{
+    int Id { get; set; }
+}
+public class Cat:IHasId
 {
     public int Id { get; set; }
     public string Name { get; set; } = "";
