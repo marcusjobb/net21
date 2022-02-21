@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Number</title>
+    </head>
+    <body>
+            <h1 id="title">Number</h1>
+            <p id="description">Enter a number between 1 and 100</p>    
+            <p id="feedback"></p>
+            <p></p>
+            <input type="text" id="input">&nbsp;
+            <button id="button" onClick="Guess()">Guess</button>
+            <button id="play" onClick="Again()" style="visibility: hidden" >Play Again</button>
+    </body>
+    <script>
+        document.getElementById("title").innerHTML = "Guess a number";
+        document.getElementById("description").innerHTML = "Enter a number between 1 and 100";
+        
+        var number = Math.floor(Math.random() * 100) + 1;
+
+        function Again() {
+            document.getElementById("feedback").innerHTML = "";
+            document.getElementById("input").value = "";
+            number = Math.floor(Math.random() * 100) + 1; 
+            document.getElementById("play").style.visibility = "hidden";
+        }
+
+        function Guess() {
+            var guess = document.getElementById("input").value;
+            if (guess == number) {
+                document.getElementById("feedback").innerHTML = "You guessed it!";
+                document.getElementById("play").style.visibility = "visible";
+            } else if (guess > number) {
+                document.getElementById("feedback").innerHTML = guess + "  is too high";
+            } else {
+                document.getElementById("feedback").innerHTML = guess + " is too low";
+            }
+        }
+
+</script>
+</html>

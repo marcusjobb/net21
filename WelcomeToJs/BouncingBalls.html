@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Ball</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    #plane {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 500px;
+        height: 500px;
+        background-color: #000000;
+        border: 5px ridge whitesmoke;
+    }
+
+    .ballClass {
+        position: absolute;
+        color: #ffffff;
+    }
+</style>
+
+<body>
+    <div id="plane">
+        <div class="ballClass" id="theBall">O</div>
+        <div class="ballClass" id="theBallX">X</div>
+    </div>
+</body>
+<script>
+
+    class ball {
+        constructor(speedX, speedY, id, speed) {
+            this.moveX = speedX;
+            this.moveY = speedY;
+            this.id = id;
+            this.x = 200;
+            this.y = 100;
+            this.xdir = 3;
+            this.ydir = 3;
+            this.moveBall();
+            setInterval(this.moveBall.bind(this), speed);
+        }
+
+        moveBall() {
+            this.x += this.xdir;
+            this.y += this.ydir;
+
+            if (this.x >= 490) this.xdir = -this.moveX;
+            if (this.x <= 10) this.xdir = this.moveX;
+            if (this.y >= 490) this.ydir = -this.moveY;
+            if (this.y <= 10) this.ydir = this.moveY;
+
+            var divBall = document.getElementById(this.id);
+            divBall.style.left = this.x + "px";
+            divBall.style.top = this.y + "px";
+        }
+    }
+
+    new ball(5, 8, "theBall", 10);
+    new ball(5, 8, "theBallX", 30);
+
+</script>
+
+</html>

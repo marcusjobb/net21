@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Hello</title>
+    </head>
+    <body>
+        <p id="hello">Hello user, what's your name?</p>
+        <p> <input id="name"><button id="OK" onclick="Greet()">OK</button></p>
+    </body>
+    <script>
+        function Greet() {
+            var name = document.getElementById("name").value;
+            document.getElementById("hello").innerHTML = "Hello, " + name;
+            document.getElementById("name").style.visibility = "hidden";
+            document.getElementById("OK").style.visibility = "hidden";    
+        }
+    </script>
+</html>

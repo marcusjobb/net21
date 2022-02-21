@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Quote of the day</title>
+</head>
+
+<body>
+    <h1>Quote of the day</h1>
+    <p id="quote"></p>
+</body>
+<script>
+    var quotes = [45,"The best preparation for tomorrow is doing your best today.",
+        "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+        "A thing well said will be wit in all languages.",
+        "The best thing about a friend is his best friend.",
+        "The best thing about a book is that it never gets old.",
+        "The best way to predict the future is to invent it.",
+        "The best way to find yourself is to lose yourself in the service of others.",
+        "The best way to keep a secret is to tell everyone.",
+        "The best way to remember a friend is to remember the things in common.",
+        "The best way to remember a person is to remember the things in common.",
+        "The best way to take care of the body is to take care of the mind.",
+        "The best way to win friends is to make them laugh and smile.",
+        "The best way to write a bad first draft is to make it excellent.",
+        "The best way to write an angry letter is to write it in shorthand.",
+    ];
+    var randomQuote = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerHTML = quotes[randomQuote];
+</script>
+
+</html>
