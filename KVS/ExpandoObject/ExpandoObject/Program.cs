@@ -5,6 +5,6 @@ Console.WriteLine("Hello, Expando!");
 
 dynamic person = new ExpandoObject();
 person.Name = "Clark";
-person.Lastname = "Kent";
+person.LastName = "Kent";
 
 Console.WriteLine(person.Name+" "+person.LastName);
